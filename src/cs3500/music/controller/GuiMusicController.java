@@ -6,7 +6,6 @@ import cs3500.music.model.ANote;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.INoteType;
 import cs3500.music.view.GuiView;
-import cs3500.music.view.IMusicEditorView;
 
 /**
  * A controller object specifically for rendering a music model in a GUI.
@@ -14,6 +13,7 @@ import cs3500.music.view.IMusicEditorView;
 public class GuiMusicController implements IMusicEditorController {
   private IMusicEditorModel model;
   private GuiView view;
+  private KeyboardHandler keyboardHandler;
 
   /**
    * Initialises a Gui Controller object.
@@ -24,6 +24,11 @@ public class GuiMusicController implements IMusicEditorController {
   public GuiMusicController(IMusicEditorModel model, GuiView view) {
     this.model = model;
     this.view = view;
+
+    //keyboardHandler.addRunnable();
+    this.view.keyboardCallback(this.keyboardHandler);
+
+
   }
 
   @Override
@@ -44,6 +49,6 @@ public class GuiMusicController implements IMusicEditorController {
       }
     }
 
-    view.setBeat(7);
+    //view.setBeat(7);
   }
 }

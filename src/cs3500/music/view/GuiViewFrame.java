@@ -1,6 +1,7 @@
 package cs3500.music.view;
 
 import java.awt.*;
+import java.awt.event.KeyListener;
 
 import javax.swing.*;
 
@@ -17,6 +18,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
   private int lowestNote;
   private int numBeats;
   private int height;
+  private KeyListener keyListener;
 
   /**
    * Creates new GuiView.
@@ -85,6 +87,11 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   @Override
   public void keyboardCallback(KeyboardHandler handler){
+    keyListener=handler;
+  }
+
+  @Override
+  public void scroll(int toScroll){
 
   }
 

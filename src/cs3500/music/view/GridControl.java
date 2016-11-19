@@ -75,8 +75,10 @@ public class GridControl {
       }
 
       //beat line
+      g2.setStroke(new BasicStroke(2));
+      g2.setColor(Color.RED);
       g.drawLine((beatPosition+1)*sideLength, sideLength, (beatPosition+1)*sideLength, (ySize + 2) * sideLength);
-
+      g2.setColor(Color.BLACK);
       drawLabels(g);
     }
 
