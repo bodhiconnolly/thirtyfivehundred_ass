@@ -7,7 +7,7 @@ import javax.swing.*;
 /**
  * A skeleton Frame (i.e., a window) in Swing
  */
-public class GuiViewFrame extends JFrame implements IMusicEditorView {
+public class GuiViewFrame extends JFrame implements GuiView {
 
   //private final JPanel displayPanel; // You may want to refine this to a subtype of JPanel
   private GridControl.Grid grid;

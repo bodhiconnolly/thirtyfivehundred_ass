@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d37c7856-e7b8-4076-9b5d-59fcff3cf007" name="Default" comment="bodhi">
+    <list default="true" id="d37c7856-e7b8-4076-9b5d-59fcff3cf007" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cs3500/music/controller/KeyboardHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/HW5_jar/HW5.jar" afterPath="$PROJECT_DIR$/out/artifacts/HW5_jar/HW5.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW5/cs3500/music/MEMain.class" afterPath="$PROJECT_DIR$/out/production/HW5/cs3500/music/MEMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/GuiMidiEditorController.class" afterPath="$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/GuiMidiEditorController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/music/view/GuiView.java" afterPath="$PROJECT_DIR$/src/cs3500/music/view/GuiView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java" afterPath="$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java" />
     </list>
     <ignored path="HW5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +33,8 @@
       <file leaf-file-name="MEMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/music/MEMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state relative-caret-position="-56">
+              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -37,8 +43,8 @@
       <file leaf-file-name="GuiViewFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
-              <caret line="27" column="45" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="45" />
+            <state relative-caret-position="200">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,8 +67,18 @@
       <file leaf-file-name="GuiView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cs3500/music/view/GuiView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="275">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyboardHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/cs3500/music/controller/KeyboardHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -72,22 +88,9 @@
         <entry file="file://$PROJECT_DIR$/src/cs3500/music/controller/MidiMusicEditorController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1000">
-              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
               <folding>
-                <marker date="1479582152190" expanded="true" signature="222:229" ph="/**...*/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IMusicEditorModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cs3500/music/model/IMusicEditorModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2275">
-              <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-              <folding>
-                <marker date="1479582152240" expanded="true" signature="96:117" ph="/**...*/" />
-                <marker date="1479582152240" expanded="true" signature="3152:3249" ph="/**...*/" />
+                <marker date="1479582848547" expanded="true" signature="222:229" ph="/**...*/" />
               </folding>
             </state>
           </provider>
@@ -143,13 +146,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -198,7 +202,6 @@
         <option value="$PROJECT_DIR$/src/cs3500/music/MEMain2.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/view/IMusicEditorView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/view/MidiViewImpl.java" />
-        <option value="$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/view/ConsoleView.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/MEMain.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/model/Track.java" />
@@ -210,6 +213,7 @@
         <option value="$PROJECT_DIR$/src/cs3500/music/model/IMusicEditorModel.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/model/IMusicEditorModelBuilder.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/view/GridControl.java" />
+        <option value="$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java" />
         <option value="$PROJECT_DIR$/src/cs3500/music/view/GuiView.java" />
       </list>
     </option>
@@ -229,8 +233,9 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-10" />
+    <option name="y" value="3" />
     <option name="width" value="3214" />
-    <option name="height" value="1750" />
+    <option name="height" value="1747" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -287,7 +292,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -349,7 +376,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="music" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="thirtyfivehundred_ass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,31 +503,13 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/artifacts/HW5_jar/HW5.jar</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/MEMain.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/GuiMidiEditorController.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/MidiMusicEditorController.class</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/MEMain.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/SongFiles/df-ttfaf.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/SongFiles/mystery-1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/ConsoleController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/GuiMusicController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/IMusicEditorController.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/GuiMidiEditorController.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/MidiMusicEditorController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/ANote.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/AScale.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/DiatonicScale.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/IMusicEditorModel.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/IMusicEditorModelBuilder.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/INoteType.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/MusicEditorType.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/Note.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/Rest.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/Sustain.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/model/Track.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/util/CompositionBuilderImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/util/MusicReader.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/view/ConsoleView.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/view/GridControl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/view/MidiViewImpl.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/model/MusicEditorModelTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -450,65 +517,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.DS_Store</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/artifacts/HW5_jar.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/artifacts/HW5_jar/HW5.jar</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/artifacts/HW5_jar/hw06.jar</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/META-INF/MANIFEST.MF</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/MultiNote.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/MusicEditorModel.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/MEMain.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/df-ttfaf.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/lnl.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/mary-little-lamb.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/mystery-1.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/mystery-2.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/mystery-3.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/zoot-lw.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/SongFiles/zoot-zl.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/ConsoleController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/GuiMidiEditorController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/GuiMusicController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/IMusicEditorController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/controller/MidiMusicEditorController.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/ANote.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/AScale.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/DiatonicScale.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/IMusicEditorModel.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/IMusicEditorModelBuilder$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/IMusicEditorModelBuilder.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/INoteType.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/MusicEditorType.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/Note.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/Rest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/Sustain.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/model/Track.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/util/CompositionBuilder.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/util/CompositionBuilderImpl.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/util/MusicReader.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/ConsoleView.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/GridControl$Grid.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/GridControl.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/GuiViewFrame.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/IMusicEditorView.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/HW5/cs3500/music/view/MidiViewImpl.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/AScaleTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/MidiSynthMock.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/MusicEditorModelTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/NoteTest.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/ReceiverMock.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/test/HW5/cs3500/music/model/TestMEMain.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/README.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/console-transcript.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/hw06.jar</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/midi-transcript.txt</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/screenshot.jpg</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/META-INF/MANIFEST.MF</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/controller/GuiMidiEditorController.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/.DS_Store</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/model/MidiSynthMock.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/model/ReceiverMock.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/model/TestMEMain.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/vcs.xml</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -516,9 +525,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.gitattributes</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/cs3500/music/music/MusicEditor.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/test/cs3500/music/view/ConsoleViewTest.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -1002,7 +1008,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479582361004</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="&#10;e">
+      <created>1479582370265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1479582370265</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1041,17 +1054,18 @@
     <option name="totallyTimeSpent" value="96910000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="0" width="3214" height="1750" extended-state="0" />
+    <frame x="-10" y="3" width="3214" height="1747" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32703215" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36231884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3655914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1067,7 +1081,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32703215" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -1086,7 +1099,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="bodhi" />
-    <option name="LAST_COMMIT_MESSAGE" value="bodhi" />
+    <MESSAGE value="&#10;e" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;e" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1107,7 +1121,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/CTest.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/io/File.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/io/FileReader.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/javax/sound/midi/MidiSystem.java" />
@@ -1352,18 +1365,10 @@
     <entry file="file://$PROJECT_DIR$/src/cs3500/music/controller/MidiMusicEditorController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1000">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
           <folding>
-            <marker date="1479582152190" expanded="true" signature="222:229" ph="/**...*/" />
+            <marker date="1479582848547" expanded="true" signature="222:229" ph="/**...*/" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/music/MEMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,16 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1397,10 +1392,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/music/MEMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/music/view/GuiViewFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cs3500/music/controller/KeyboardHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cs3500/music/view/GuiView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="275">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding />
         </state>
       </provider>
