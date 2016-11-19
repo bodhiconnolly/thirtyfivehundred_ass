@@ -95,4 +95,9 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   }
 
+  @Override
+  public int getLowestNote() {
+    return this.lowestNote;
+  }
+
 }

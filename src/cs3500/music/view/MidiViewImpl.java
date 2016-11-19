@@ -71,7 +71,6 @@ public class MidiViewImpl implements IMusicEditorView {
           throws InvalidMidiDataException {
     MidiMessage start = new ShortMessage(ShortMessage.NOTE_ON, instrument - 1, rawPitch, velocity);
     MidiMessage stop = new ShortMessage(ShortMessage.NOTE_OFF, instrument - 1, rawPitch, velocity);
-    System.out.print("!");
     this.receiver.send(start, this.synth.getMicrosecondPosition());
     this.receiver.send(stop, this.synth.getMicrosecondPosition() + duration * this.tempo);
   }

@@ -68,8 +68,7 @@ public class MEMain {
           controller = new ConsoleController(model, view);
           break;
         case "guimidi":
-          view = new CompositeView(
-                  new GuiViewFrame(
+          view = new CompositeView(new GuiViewFrame(
                   model.getHighestNote(), model.getLowestNote(), model.length()),
                   new MidiViewImpl(model.getTempo()));
           controller = new GuiMidiEditorController(model, view);

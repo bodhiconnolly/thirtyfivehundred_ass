@@ -11,6 +11,7 @@ public interface GuiView extends IMusicEditorView {
   void keyboardCallback(KeyboardHandler handler);
   void setBeat(int beat);
   void scroll(int toScroll);
+  int getLowestNote();
 
 }
 
