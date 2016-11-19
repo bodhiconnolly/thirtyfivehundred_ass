@@ -27,6 +27,16 @@ public class GuiMidiEditorController implements IMusicEditorController {
 
   @Override
   public void go() {
+    int numBeats = model.length();
 
+    for (int i = 0; i < numBeats; ++i) {
+      ArrayList<ANote> notes = model.getAtBeat(i);
+      for (int j = 0; j < notes.size(); ++j) {
+        ANote note = notes.get(j);
+        if (note.whichType() == INoteType.NOTE) {
+          view.renderNote(j, 1, note.getDuration(), note.getInstrument(), i);
+        }
+      }
+    }
   }
 }
