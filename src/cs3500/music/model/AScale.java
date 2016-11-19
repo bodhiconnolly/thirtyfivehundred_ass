@@ -1,7 +1,7 @@
 package cs3500.music.model;
 
 /**
- * Represent a scale of pitches.
+ * Represent a scale of pitches. Provides methods for handling a note with respect to this scale.
  */
 public abstract class AScale {
   final int[] pitches; // Pitches in scale

@@ -1,7 +1,7 @@
 package cs3500.music.model;
 
 /**
- * Represent a diatonic scale.
+ * Represent a diatonic scale. Provides methods for handling a note with respect to this scale.
  */
 public class DiatonicScale extends AScale {
   @Override
@@ -27,14 +27,16 @@ public class DiatonicScale extends AScale {
       case 10: return "A";
       case 11: return "A#";
       case 12: return "B";
-      default: throw new IllegalArgumentException("Invalid pitch (" + pitch + "): Cannot convert to string.");
+      default: throw new IllegalArgumentException("Invalid pitch (" + pitch + "): "
+              + "Cannot convert to string.");
     }
   }
 
   @Override
   void validPitch(int pitch) {
     if (pitch < 1 || pitch > 12) {
-      throw new IllegalArgumentException("Invalid pitch: must be >=1 or <=12. Was given " + pitch + ".");
+      throw new IllegalArgumentException("Invalid pitch: must be >=1 or <=12. "
+              + "Was given " + pitch + ".");
     }
   }
 
@@ -50,7 +52,8 @@ public class DiatonicScale extends AScale {
   //////////////////////////////
 
   // Builds the given type of chord at a specified beat.
-  // cs3500.music.model.Note[] buildChord(Chord chord, int basePitch, int baseBaseInterval, int duration, int beat)
+  // cs3500.music.model.Note[] buildChord(Chord chord, int basePitch, int baseBaseInterval,
+  // int duration, int beat)
   /*
   enum Chord {
     MAJOR,

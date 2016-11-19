@@ -5,47 +5,59 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * A class that visually displays a music model in Swing.
+ * A skeleton Frame (i.e., a window) in Swing
  */
 public class GuiViewFrame extends JFrame implements IMusicEditorView {
 
+  //private final JPanel displayPanel; // You may want to refine this to a subtype of JPanel
   private GridControl.Grid grid;
   private int highestNote;
   private int lowestNote;
   private int numBeats;
   private int height;
-  private JFrame window;
-
 
   /**
-   * Creates new GuiView with size based on note range and length of track.
+   * Creates new GuiView.
    */
   public GuiViewFrame(int highestNote, int lowestNote, int numBeats) {
 
     this.highestNote = highestNote;
     this.lowestNote = lowestNote;
     this.numBeats = numBeats;
+
+    //this.displayPanel = new ConcreteGuiViewPanel();
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     height = this.highestNote - this.lowestNote;
     int width = this.numBeats;
+    //this.getContentPane().setLayout(new BorderLayout());
     grid = new GridControl.Grid(width, height, this.lowestNote);
     grid.setSize();
-    window = new JFrame();
+    JFrame window = new JFrame();
     window.setSize(getPreferredSize());
-    window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    window.add(new JScrollPane(grid,
-            JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    window.add(new JScrollPane(grid, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
     window.setVisible(true);
+
   }
 
-  @Override
+  /**
+   * Render note.
+   * @param rawpitch pitch
+   * @param volume volume of note
+   * @param duration Duration of note
+   * @param instrument instr
+   * @param beatNum beat
+   */
   public void renderNote(int rawpitch, int volume, int duration, int instrument, int beatNum) {
-    for (int i = 1; i < duration - 1; ++i) {
+    for (int i = 1; i < duration; ++i) {
       //render sustains
       grid.fillCell(beatNum + i, height - rawpitch, Color.GREEN);
     }
-    //render first beat
+    //render first note
     grid.fillCell(beatNum, height - rawpitch, Color.BLACK);
+
   }
 
   @Override
@@ -62,4 +74,5 @@ public class GuiViewFrame extends JFrame implements IMusicEditorView {
   public Dimension getPreferredSize() {
     return new Dimension(800, 500);
   }
+
 }

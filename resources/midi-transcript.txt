@@ -1,0 +1,340 @@
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 1000000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      79
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      79
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      79
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      79
+              Velocity:   90
+              Time Stamp: 1000000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      67
+              Velocity:   90
+              Time Stamp: 1800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      76
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      74
+              Velocity:   90
+              Time Stamp: 600000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      64
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      64
+              Velocity:   90
+              Time Stamp: 1800000
+Sent message: Command:    ON
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: -1
+Sent message: Command:    OFF
+              Instrument: 0
+              Pitch:      72
+              Velocity:   90
+              Time Stamp: 1800000

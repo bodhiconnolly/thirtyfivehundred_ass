@@ -32,6 +32,7 @@ public class GuiMusicController implements IMusicEditorController {
     //System.out.print(model.toString());
 
     int numBeats = model.length();
+
     for (int i = 0; i < numBeats; ++i) {
       ArrayList<ANote> notes = model.getAtBeat(i);
       for (int j = 0; j < notes.size(); ++j) {

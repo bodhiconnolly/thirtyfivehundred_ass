@@ -2,8 +2,8 @@ package cs3500.music.model;
 
 /**
  * Represent a rest. Represented as a class both in case it needs properties in the future
- * and because positions in a track can be represented by a cs3500.music.model.Note or cs3500.music.model.Sustain (as well as a cs3500.music.model.Rest),
- * so rest needs to implement cs3500.music.model.ANote.
+ * and because positions in a track can be represented by a Note or Sustain (as well as a Rest),
+ * so rest needs to implement ANote.
  */
 class Rest extends ANote {
   /**
@@ -15,18 +15,18 @@ class Rest extends ANote {
 
   @Override
   public int getPitch() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a pitch.");
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a pitch.");
   }
 
   @Override
   public int getBaseInterval() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: "
+    throw new IllegalArgumentException("Invalid ANote given: "
             + "A rest does not have a base interval.");
   }
 
   @Override
   public int getBeat() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a beat.");
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a beat.");
   }
 
   @Override
@@ -36,23 +36,23 @@ class Rest extends ANote {
 
   @Override
   void changePitch(int newPitch, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a pitch.");
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a pitch.");
   }
 
   @Override
   void changeBaseInterval(int newBaseInterval, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: "
+    throw new IllegalArgumentException("Invalid ANote given: "
             + "A rest does not have a base interval.");
   }
 
   @Override
   void changeBeat(int newBeat, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a beat.");
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a beat.");
   }
 
   @Override
   void changeDuration(int newDuration, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest's duration cannot be changed.");
+    throw new IllegalArgumentException("Invalid ANote given: A rest's duration cannot be changed.");
   }
 
   @Override
@@ -62,18 +62,18 @@ class Rest extends ANote {
 
   @Override
   public int getRawPitchNumber(AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a raw pitch"
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a raw pitch"
             + "number.");
   }
 
   @Override
   public int getInstrument() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have an "
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have an "
             + "instrument.");
   }
 
   public String toString(AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest cannot be converted to a "
+    throw new IllegalArgumentException("Invalid ANote given: A rest cannot be converted to a "
             + "conventional form string.");
   }
 

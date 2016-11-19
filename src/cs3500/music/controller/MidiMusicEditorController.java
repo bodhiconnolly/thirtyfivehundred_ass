@@ -8,7 +8,9 @@ import cs3500.music.model.INoteType;
 import cs3500.music.view.IMusicEditorView;
 
 /**
- * A controller specifically for playing a music model with a midi interface.
+ * Represent a music editor controller.
+ * Classes implementing this interface take in a model and view
+ * and use the .go() method to begin running the music editor.
  */
 public class MidiMusicEditorController implements IMusicEditorController {
   IMusicEditorModel model;
@@ -33,27 +35,28 @@ public class MidiMusicEditorController implements IMusicEditorController {
       ArrayList<ANote> notesAtBeat = this.model.getAtBeat(curBeat);
 
       // Uncomment the following line to print notes to the console as it is played (for fun!)
-      //System.out.print(getString(notesAtBeat) + "\n");
+      System.out.print(getString(notesAtBeat) + "\n");
 
       for (ANote n : notesAtBeat) {
         if (n.whichType() == INoteType.NOTE) {
-          this.view.renderNote((n.getPitch() + n.getBaseInterval() * 12), 90, n.getDuration(), n.getInstrument(), n.getBeat());
+          this.view.renderNote((n.getPitch() + n.getBaseInterval() * 12), 90,
+                  n.getDuration(), n.getInstrument(), n.getBeat());
         }
       }
       curBeat = curBeat + 1;
-      if (curBeat >= songLength) {
-        //curBeat = 0; // Loops song indefinitely
-        try {
-          Thread.sleep((this.view.getTempo() / 1000) * 3);
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        }
-        return;   // Uncomment this to end playback after first loop
-      }
       try {
         Thread.sleep(this.view.getTempo() / 1000);
       } catch (InterruptedException e) {
         e.printStackTrace();
+      }
+      // Wait for last note to end
+      if (curBeat >= songLength) {
+        try {
+          Thread.sleep(800);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+        return;
       }
     }
   }

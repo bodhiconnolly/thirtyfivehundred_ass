@@ -4,7 +4,12 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 /**
- * Represent the cs3500.music.model for a cs3500.music.music editor.
+ * Represent the model for a music editor.
+ *
+ * Models a song as a collection of notes (containing pitch, base interval (ex. octave),
+ * and duration) which begin at specific beats (time steps). Provides methods for adding, accessing,
+ * and editing notes. Additionally, provides methods for getting information about the track, such
+ * as the highest note, lowest note, and tempo (which can be edited).
  */
 public interface IMusicEditorModel {
   /**
@@ -80,22 +85,19 @@ public interface IMusicEditorModel {
   int length();
 
   /**
-   * Get highest note in this editor. Note: added since assignment five for
-   * easy sizing of views.
+   * Get highest note in this editor.
    * @return Highest note
    */
   int getHighestNote();
 
   /**
-   * Get lowest note in this editor. Note: added since assignment five for
-   * easy sizing of views.
+   * Get lowest note in this editor.
    * @return The lowest note
    */
   int getLowestNote();
 
   /**
    * Retruns a model loaded from the given file name.
-   * Note: added since assignment five for easy sizing of views.
    * @param fileName Name of the file to load from
    * @return Model with song from file
    */

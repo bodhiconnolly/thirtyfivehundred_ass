@@ -5,6 +5,10 @@ import org.junit.Test;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import javax.sound.midi.InvalidMidiDataException;
+import javax.sound.midi.MidiMessage;
+import javax.sound.midi.ShortMessage;
+
 import cs3500.music.util.CompositionBuilder;
 import cs3500.music.util.CompositionBuilderImpl;
 import cs3500.music.util.MusicReader;
@@ -74,13 +78,21 @@ public class MusicEditorModelTest {
             + "8                                                              |  \n", trackString);
   */
 
-    CompositionBuilder cb = new CompositionBuilderImpl();
     try {
-      FileReader mhll = new FileReader("/Users/matteoalampi/Desktop/HW6/src/cs3500.music.SongFiles/mary-little-lamb.txt");
-      System.out.print(MusicReader.parseFile(mhll, cb).toString());
-    }
-    catch (FileNotFoundException e) {
-      System.out.print("Stick this exception up your ass: FileNotFoundException");
+      StringBuilder sb = new StringBuilder();
+
+      MidiMessage mm = new ShortMessage(ShortMessage.NOTE_ON, 1, 2, 3);
+      ShortMessage sm = (ShortMessage)mm;
+
+      sb.append("Sent message: ");
+      sb.append("Command:    " + sm.getCommand() + "\n");
+      sb.append("              " + "Instrument: " + sm.getChannel() + "\n");
+      sb.append("              " + "Pitch:      " + sm.getData1() + "\n");
+      sb.append("              " + "Velocity:   " + sm.getData2() + "\n");
+      System.out.print("\n\n" + sb);
+
+    } catch (InvalidMidiDataException e) {
+      e.printStackTrace();
     }
   }
 }

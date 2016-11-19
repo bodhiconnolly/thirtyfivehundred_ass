@@ -15,18 +15,18 @@ class Sustain extends ANote {
 
   @Override
   public int getPitch() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain does not have a pitch.");
+    throw new IllegalArgumentException("Invalid ANote given: A sustain does not have a pitch.");
   }
 
   @Override
   public int getBaseInterval() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: "
+    throw new IllegalArgumentException("Invalid ANote given: "
             + "A sustain does not have a base interval.");
   }
 
   @Override
   public int getBeat() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain does not have a beat.");
+    throw new IllegalArgumentException("Invalid ANote given: A sustain does not have a beat.");
   }
 
   @Override
@@ -36,23 +36,24 @@ class Sustain extends ANote {
 
   @Override
   void changePitch(int newPitch, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain does not have a pitch.");
+    throw new IllegalArgumentException("Invalid ANote given: A sustain does not have a pitch.");
   }
 
   @Override
   void changeBaseInterval(int newBaseInterval, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: "
+    throw new IllegalArgumentException("Invalid ANote given: "
             + "A sustain does not have a base interval.");
   }
 
   @Override
   void changeBeat(int newBeat, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain does not have a beat.");
+    throw new IllegalArgumentException("Invalid ANote given: A sustain does not have a beat.");
   }
 
   @Override
   void changeDuration(int newDuration, AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain's duration cannot be changed.");
+    throw new IllegalArgumentException("Invalid ANote given: "
+            + "A sustain's duration cannot be changed.");
   }
 
   @Override
@@ -62,18 +63,18 @@ class Sustain extends ANote {
 
   @Override
   public int getRawPitchNumber(AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A rest does not have a raw pitch"
+    throw new IllegalArgumentException("Invalid ANote given: A rest does not have a raw pitch"
             + "number.");
   }
 
   @Override
   public int getInstrument() {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain does not have an "
+    throw new IllegalArgumentException("Invalid ANote given: A sustain does not have an "
             + "instrument");
   }
 
   public String toString(AScale scale) {
-    throw new IllegalArgumentException("Invalid cs3500.music.model.ANote given: A sustain cannot be converted to a "
+    throw new IllegalArgumentException("Invalid ANote given: A sustain cannot be converted to a "
             + "conventional form string.");
   }
 
