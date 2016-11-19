@@ -38,5 +38,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
         }
       }
     }
+
+    view.renderNote(-1, -1, -1, -1, -1);
   }
 }
