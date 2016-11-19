@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import cs3500.music.model.ANote;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.INoteType;
+import cs3500.music.view.GuiView;
 import cs3500.music.view.IMusicEditorView;
 
 /**
@@ -12,7 +13,7 @@ import cs3500.music.view.IMusicEditorView;
  */
 public class GuiMusicController implements IMusicEditorController {
   private IMusicEditorModel model;
-  private IMusicEditorView view;
+  private GuiView view;
 
   /**
    * Initialises a Gui Controller object.
@@ -20,7 +21,7 @@ public class GuiMusicController implements IMusicEditorController {
    * @param model the model for the controller.
    * @param view  the view for the controller.
    */
-  public GuiMusicController(IMusicEditorModel model, IMusicEditorView view) {
+  public GuiMusicController(IMusicEditorModel model, GuiView view) {
     this.model = model;
     this.view = view;
   }
@@ -42,5 +43,7 @@ public class GuiMusicController implements IMusicEditorController {
         }
       }
     }
+
+    view.setBeat(7);
   }
 }

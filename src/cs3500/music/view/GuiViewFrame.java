@@ -4,6 +4,8 @@ import java.awt.*;
 
 import javax.swing.*;
 
+import cs3500.music.controller.KeyboardHandler;
+
 /**
  * A skeleton Frame (i.e., a window) in Swing
  */
@@ -44,11 +46,12 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   /**
    * Render note.
-   * @param rawpitch pitch
-   * @param volume volume of note
-   * @param duration Duration of note
+   *
+   * @param rawpitch   pitch
+   * @param volume     volume of note
+   * @param duration   Duration of note
    * @param instrument instr
-   * @param beatNum beat
+   * @param beatNum    beat
    */
   public void renderNote(int rawpitch, int volume, int duration, int instrument, int beatNum) {
     for (int i = 1; i < duration; ++i) {
@@ -73,6 +76,16 @@ public class GuiViewFrame extends JFrame implements GuiView {
   @Override
   public Dimension getPreferredSize() {
     return new Dimension(800, 500);
+  }
+
+  @Override
+  public void setBeat(int num){
+    grid.setBeat(num);
+  }
+
+  @Override
+  public void keyboardCallback(KeyboardHandler handler){
+
   }
 
 }

@@ -13,6 +13,7 @@ import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.IMusicEditorModelBuilder;
 import cs3500.music.model.MusicEditorType;
 import cs3500.music.view.ConsoleView;
+import cs3500.music.view.GuiView;
 import cs3500.music.view.GuiViewFrame;
 import cs3500.music.view.IMusicEditorView;
 import cs3500.music.view.MidiViewImpl;
@@ -49,6 +50,7 @@ public class MEMain {
               new DiatonicScale(), 4).fromFile(songToPlay);
 
       IMusicEditorView view;
+      GuiView view2;
       IMusicEditorController controller;
       switch (viewType) {
         case "midi":
@@ -56,9 +58,9 @@ public class MEMain {
           controller = new MidiMusicEditorController(model, view);
           break;
         case "visual":
-          view = new GuiViewFrame(
+          view2 = new GuiViewFrame(
                   model.getHighestNote(), model.getLowestNote(), model.length());
-          controller = new GuiMusicController(model, view);
+          controller = new GuiMusicController(model, view2);
           break;
         case "console":
           view = new ConsoleView(model);

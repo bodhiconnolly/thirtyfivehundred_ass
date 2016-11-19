@@ -24,6 +24,8 @@ public class GridControl {
 
     private int sideLength = 20;
 
+    private int beatPosition = -1;
+
     public Grid(int xSize, int ySize, int lowestNote) {
       this.xSize = xSize;
       this.ySize = ySize;
@@ -71,6 +73,10 @@ public class GridControl {
           g.drawLine(sideLength * 2, i, (xSize + 2) * sideLength, i);
         }
       }
+
+      //beat line
+      g.drawLine((beatPosition+1)*sideLength, sideLength, (beatPosition+1)*sideLength, (ySize + 2) * sideLength);
+
       drawLabels(g);
     }
 
@@ -103,6 +109,9 @@ public class GridControl {
       super.setPreferredSize(
               new Dimension(sideLength * (xSize + 3),
                       sideLength * (ySize + 3)));
+    }
+    public void setBeat(int num){
+      this.beatPosition=num;
     }
 
   }

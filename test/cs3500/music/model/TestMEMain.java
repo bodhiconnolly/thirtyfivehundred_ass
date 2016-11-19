@@ -8,6 +8,7 @@ import java.util.Scanner;
 import cs3500.music.controller.GuiMusicController;
 import cs3500.music.controller.IMusicEditorController;
 import cs3500.music.controller.MidiMusicEditorController;
+import cs3500.music.view.GuiView;
 import cs3500.music.view.GuiViewFrame;
 import cs3500.music.view.IMusicEditorView;
 import cs3500.music.view.MidiViewImpl;
@@ -32,6 +33,7 @@ public class TestMEMain {
               new DiatonicScale(), 4).fromFile(songToPlay);
 
       IMusicEditorView view;
+      GuiView view2;
       IMusicEditorController controller;
       switch (viewType) {
         case "midi":
@@ -39,9 +41,9 @@ public class TestMEMain {
           controller = new MidiMusicEditorController(model, view);
           break;
         case "visual":
-          view = new GuiViewFrame(
+          view2 = new GuiViewFrame(
                   model.getHighestNote(), model.getLowestNote(), model.length());
-          controller = new GuiMusicController(model, view);
+          controller = new GuiMusicController(model, view2);
           break;
         case "console":
           throw new IllegalArgumentException("Yall didn't implement this yet.");
