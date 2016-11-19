@@ -30,11 +30,13 @@ public class CompositionBuilderImpl implements CompositionBuilder<IMusicEditorMo
   // TODO: Support instrument and volume?
   // TODO: Return more than just this?
   @Override
-  public CompositionBuilder<IMusicEditorModel> addNote(int start, int end, int instrument, int pitch, int volume) {
+  public CompositionBuilder<IMusicEditorModel> addNote(int start, int end, int instrument,
+                                                       int pitch, int volume) {
     int pitchWithinBaseInterval = pitch % 12;
     if (pitchWithinBaseInterval == 0) { pitchWithinBaseInterval = 12; }
     int baseInterval = ((pitch - pitchWithinBaseInterval) / 12) + 1;
-    int duration = (end - start) + 1; // + 1 to account for the fact that minumum note duration is 1
+    // + 1 to account for the fact that minumum note duration is 1
+    int duration = (end - start) + 1;
     this.model.addNote(pitchWithinBaseInterval, baseInterval, start, duration, instrument);
     return this;
   }

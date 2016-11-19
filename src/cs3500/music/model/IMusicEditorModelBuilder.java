@@ -1,16 +1,9 @@
 package cs3500.music.model;
 
 /**
- * Class for building a IMusicEditorModel.
+ * Class for building a IMusicEditorModel. Provides one static method for building.
  */
 public class IMusicEditorModelBuilder {
-  /**
-   * Generates a new music model.
-   * @param met
-   * @param scale
-   * @param measures
-   * @return
-   */
   public static IMusicEditorModel build(MusicEditorType met, AScale scale, int measures) {
     switch (met) {
       case TRACK:

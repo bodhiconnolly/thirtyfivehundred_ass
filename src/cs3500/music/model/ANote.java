@@ -1,23 +1,29 @@
 package cs3500.music.model;
 
 /**
- * Represent a note space.
+ * Represent a note space. Provides methods to get information (such as pitch, beat, duration, etc.)
+ * about the note and to edit the note.
+ *
+ * An ANote can be a Note, Sustain, or Rest.
  */
 public abstract class ANote {
   /**
-   * Gets the pitch of the given cs3500.music.model.ANote, if there is one. Throws exception if there is none.
+   * Gets the pitch of the given cs3500.music.model.ANote, if there is one.
+   * Throws exception if there is none.
    * @return Pitch of given cs3500.music.model.ANote
    */
   public abstract int getPitch();
 
   /**
-   * Gets the base interval of the given cs3500.music.model.ANote, if there is one. Throws exception if there is none.
+   * Gets the base interval of the given cs3500.music.model.ANote, if there is one.
+   * Throws exception if there is none.
    * @return Base interval of given cs3500.music.model.ANote
    */
   public abstract int getBaseInterval();
 
   /**
-   * Gets the beat of the given cs3500.music.model.ANote, if there is one. Throws exception if there is none.
+   * Gets the beat of the given cs3500.music.model.ANote, if there is one.
+   * Throws exception if there is none.
    * @return Beat of given cs3500.music.model.ANote
    */
   public abstract int getBeat();

@@ -4,11 +4,11 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
- * A helper to read cs3500.music.music data and construct a cs3500.music.music composition from it.
+ * A helper to read music data and construct a music composition from it.
  */
 public class MusicReader {
   /**
-   * A factory for producing new cs3500.music.music compositions, given a source of cs3500.music.music and a
+   * A factory for producing new music compositions, given a source of music and a
    * builder for constructing compositions.
    *
    * <p>
@@ -23,7 +23,7 @@ public class MusicReader {
    * </p>
    * @param readable The source of data for the cs3500.music.music composition
    * @param piece A builder for helping to construct a new composition
-   * @param <T> The main cs3500.music.model interface type describing cs3500.music.music compositions
+   * @param <T> The main model interface type describing music compositions
    * @return
    */
   public static <T> T parseFile(Readable readable, CompositionBuilder<T> piece) {

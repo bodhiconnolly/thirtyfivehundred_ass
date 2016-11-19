@@ -3,7 +3,8 @@ package cs3500.music.model;
 import java.util.ArrayList;
 
 /**
- * Represent a note that is hit.
+ * Represent a note that is hit. Provides methods to get information (such as pitch,
+ * beat, duration, etc.) about the note and to edit the note.
  */
 class Note extends ANote {
   int pitch; // Pitch

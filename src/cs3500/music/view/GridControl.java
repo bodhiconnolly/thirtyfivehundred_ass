@@ -10,6 +10,9 @@ import cs3500.music.model.DiatonicScale;
 
 public class GridControl {
 
+  /**
+   * Grid that is controller.
+   */
   public static class Grid extends JPanel {
 
     private List<Point> fillCellsBlack;

@@ -7,7 +7,7 @@ import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.INoteType;
 
 /**
- * Created by Bodhi on 7/11/2016.
+ *
  */
 public class ConsoleView implements IMusicEditorView {
   private IMusicEditorModel model;

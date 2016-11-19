@@ -10,8 +10,14 @@ import cs3500.music.util.CompositionBuilderImpl;
 import cs3500.music.util.MusicReader;
 
 // TODO: Support overlapping.
+
 /**
- * Represent a track. Columns represent all notes at a beat, rows represent all notes
+ * Represent a track.
+ * Models a song as a collection of notes (containing pitch, base interval (ex. octave),
+ * and duration) which begin at specific beats (time steps). Provides methods for adding, accessing,
+ * and editing notes. Additionally, provides methods for getting information about the track, such
+ * as the highest note, lowest note, and tempo (which can be edited).
+ * Columns represent all notes at a beat, rows represent all notes
  * of a particular pitch/base interval.
  */
 public class Track implements IMusicEditorModel {
@@ -39,6 +45,16 @@ public class Track implements IMusicEditorModel {
     this.highestBeat = -1; // -1 indicates there is no highest beat yet.
   }
 
+  private static ArrayList<ANote> removeRests(ArrayList<ANote> notes) {
+    ArrayList<ANote> notes2 = new ArrayList<ANote>();
+    for (int i = 0; i < notes.size(); i++) {
+      if (notes.get(i).whichType() == INoteType.NOTE) {
+        notes2.add(notes.get(i));
+      }
+    }
+    return notes2;
+  }
+
   @Override
   public void addNote(int pitch, int baseInterval, int beat, int duration, int instrument) {
     Note newNote = new Note(pitch, baseInterval, beat, duration, instrument);
@@ -50,14 +66,16 @@ public class Track implements IMusicEditorModel {
   }
 
   @Override
-  public void editPitchBaseInterval(int newPitch, int newBaseInterval, int curPitch, int curBaseInterval, int curBeat, int instrument) {
+  public void editPitchBaseInterval(int newPitch, int newBaseInterval, int curPitch,
+                                    int curBaseInterval, int curBeat, int instrument) {
     // Get raw pitch number
-    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1, instrument).getRawPitchNumber(this.scale);
+    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1,
+            instrument).getRawPitchNumber(this.scale);
     // Get note to be edited
     ANote curNote = this.track.get(curBeat).get((curRawPitchNumber - 1) - (this.lowestNote - 1));
     // Don't allow editing if cs3500.music.model.ANote isn't a cs3500.music.model.Note
     if (curNote.whichType() != INoteType.NOTE) {
-      throw new IllegalArgumentException("Can't edit pitch/base interval of a non-cs3500.music.model.Note cs3500.music.model.ANote.");
+      throw new IllegalArgumentException("Can't edit pitch/base interval of a Note ANote.");
     }
     // Place a rest at the old location
     this.track.get(curBeat).set((curRawPitchNumber - 1) - (this.lowestNote - 1), new Rest());
@@ -66,14 +84,16 @@ public class Track implements IMusicEditorModel {
   }
 
   @Override
-  public void editStartBeat(int newBeat, int curPitch, int curBaseInterval, int curBeat, int instrument) {
+  public void editStartBeat(int newBeat, int curPitch, int curBaseInterval, int curBeat,
+                            int instrument) {
     // Get raw pitch number
-    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1, instrument).getRawPitchNumber(this.scale);
+    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1,
+            instrument).getRawPitchNumber(this.scale);
     // Get note to be edited
     ANote curNote = this.track.get(curBeat).get((curRawPitchNumber - 1) - (this.lowestNote - 1));
     // Don't allow editing if cs3500.music.model.ANote isn't a cs3500.music.model.Note
     if (curNote.whichType() != INoteType.NOTE) {
-      throw new IllegalArgumentException("Can't edit starting beat of non-cs3500.music.model.Note cs3500.music.model.ANote.");
+      throw new IllegalArgumentException("Can't edit starting beat of non-Note ANote.");
     }
     // Place a rest at the old location
     this.track.get(curBeat).set((curRawPitchNumber - 1) - (this.lowestNote - 1), new Rest());
@@ -82,14 +102,16 @@ public class Track implements IMusicEditorModel {
   }
 
   @Override
-  public void editDuration(int newDuration, int curPitch, int curBaseInterval, int curBeat, int instrument) {
+  public void editDuration(int newDuration, int curPitch, int curBaseInterval, int curBeat,
+                           int instrument) {
     // Get raw pitch number
-    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1, instrument).getRawPitchNumber(this.scale);
+    int curRawPitchNumber = new Note(curPitch, curBaseInterval, curBeat, 1,
+            instrument).getRawPitchNumber(this.scale);
     // Get note to be edited
     ANote curNote = this.track.get(curBeat).get((curRawPitchNumber - 1) - (this.lowestNote - 1));
     // Don't allow editing if cs3500.music.model.ANote isn't a cs3500.music.model.Note
     if (curNote.whichType() != INoteType.NOTE) {
-      throw new IllegalArgumentException("Can't edit starting beat of non-cs3500.music.model.Note cs3500.music.model.ANote.");
+      throw new IllegalArgumentException("Can't edit starting beat of non-Note ANote.");
     }
     // Place cs3500.music.model.Note in its new location
     this.addNote(curPitch, curBaseInterval, curBeat, newDuration, instrument);
@@ -98,7 +120,8 @@ public class Track implements IMusicEditorModel {
   @Override
   public void deleteNote(int pitch, int baseInterval, int beat, int instrument) {
     // Get raw pitch number
-    int curRawPitchNumber = new Note(pitch, baseInterval, beat, 1, instrument).getRawPitchNumber(this.scale);
+    int curRawPitchNumber = new Note(pitch, baseInterval, beat, 1,
+            instrument).getRawPitchNumber(this.scale);
     // Check if it is a note
     if (this.track.get(beat).get((curRawPitchNumber - 1) - (this.lowestNote - 1)).whichType()
             != INoteType.NOTE) {
@@ -212,9 +235,11 @@ public class Track implements IMusicEditorModel {
         trackString = trackString + n.toString();
         for (int i = 1; i < n.getDuration(); i++) {
           ArrayList<ANote> currentBeat = this.track.get(n.getBeat() + i);
-          if (currentBeat.get(n.getRawPitchNumber(this.scale) - 1  - (this.lowestNote - 1)).whichType()
+          if (currentBeat.get(n.getRawPitchNumber(this.scale) - 1
+                  - (this.lowestNote - 1)).whichType()
                   != INoteType.NOTE) { // Don't erase Notes with Sustains.
-            this.track.get(n.getBeat() + i).set((n.getRawPitchNumber(this.scale) - 1  - (this.lowestNote - 1)),
+            this.track.get(n.getBeat() + i).set((n.getRawPitchNumber(this.scale) - 1
+                            - (this.lowestNote - 1)),
                     new Sustain());
           }
         }
@@ -236,7 +261,7 @@ public class Track implements IMusicEditorModel {
   }
 
   /**
-   * Gets the String of notes that is used for the console output header
+   * Gets the String of notes that is used for the console output header.
    */
   private void updateNoteHeaderString() {
     //this.setLowNote(notes);
@@ -252,8 +277,7 @@ public class Track implements IMusicEditorModel {
       noteHeaderString += note1.toString(this.scale);
       if (note1.pitch < 12) {
         note1.pitch = note1.pitch + 1;
-      }
-      else {
+      } else {
         note1.pitch = 1;
         note1.baseInterval = note1.baseInterval + 1;
       }
@@ -275,13 +299,13 @@ public class Track implements IMusicEditorModel {
   }
 
   @Override
-  public void setTempo(int tempo) {
-    this.tempo = tempo;
+  public int getTempo() {
+    return this.tempo;
   }
 
   @Override
-  public int getTempo() {
-    return this.tempo;
+  public void setTempo(int tempo) {
+    this.tempo = tempo;
   }
 
   @Override
@@ -301,20 +325,11 @@ public class Track implements IMusicEditorModel {
 
   @Override
   public IMusicEditorModel fromFile(String fileName) throws FileNotFoundException {
-      CompositionBuilder cb = new CompositionBuilderImpl();
-      String path = new File("").getAbsolutePath() + "/src/cs3500/music/SongFiles/" + fileName + ".txt";
-      FileReader mhll = new FileReader(path);
-      IMusicEditorModel model = (IMusicEditorModel) MusicReader.parseFile(mhll, cb);
-      return model;
-  }
-
-  private static ArrayList<ANote> removeRests(ArrayList<ANote> notes) {
-    ArrayList<ANote> notes2 = new ArrayList<ANote>();
-    for (int i = 0; i < notes.size(); i++) {
-      if (notes.get(i).whichType() == INoteType.NOTE) {
-        notes2.add(notes.get(i));
-      }
-    }
-    return notes2;
+    CompositionBuilder cb = new CompositionBuilderImpl();
+    String path = new File("").getAbsolutePath() + "/" + "src/cs3500/music/SongFiles/" + fileName;
+    System.out.print(path);
+    FileReader mhll = new FileReader(path);
+    IMusicEditorModel model = (IMusicEditorModel) MusicReader.parseFile(mhll, cb);
+    return model;
   }
 }

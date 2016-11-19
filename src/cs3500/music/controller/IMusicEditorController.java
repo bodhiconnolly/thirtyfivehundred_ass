@@ -1,7 +1,9 @@
 package cs3500.music.controller;
 
 /**
- * The controller interface that defines interaction between model and view.
+ * Represent a music editor controller.
+ * Classes implementing this interface take in a model and view
+ * and use the .go() method to begin running the music editor.
  */
 public interface IMusicEditorController {
   /**
