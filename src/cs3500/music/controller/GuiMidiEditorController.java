@@ -12,35 +12,21 @@ import cs3500.music.view.IMusicEditorView;
  */
 public class GuiMidiEditorController implements IMusicEditorController {
   IMusicEditorModel model;
-  IMusicEditorView guiview;
-  IMusicEditorView midiview;
+  IMusicEditorView view;
 
   /**
    * Initialises the controller object.
    *
    * @param model the model for the controller.
-   * @param guiview the view for the controller.
+   * @param view the view for the controller.
    */
-  public GuiMidiEditorController(IMusicEditorModel model, IMusicEditorView guiview, IMusicEditorView midiview2) {
+  public GuiMidiEditorController(IMusicEditorModel model, IMusicEditorView view) {
     this.model = model;
-    this.guiview = guiview;
-    this.midiview = midiview;
+    this.view = view;
   }
 
   @Override
   public void go() {
-    int numBeats = model.length();
-
-    for (int i = 0; i < numBeats; ++i) {
-      ArrayList<ANote> notes = model.getAtBeat(i);
-      for (int j = 0; j < notes.size(); ++j) {
-        ANote note = notes.get(j);
-        if (note.whichType() == INoteType.NOTE) {
-          guiview.renderNote(j, 1, note.getDuration(), note.getInstrument(), i);
-        }
-      }
-    }
-
 
   }
 }

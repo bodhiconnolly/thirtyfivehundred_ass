@@ -35,7 +35,7 @@ public class MidiMusicEditorController implements IMusicEditorController {
       ArrayList<ANote> notesAtBeat = this.model.getAtBeat(curBeat);
 
       // Uncomment the following line to print notes to the console as it is played (for fun!)
-      System.out.print(getString(notesAtBeat) + "\n");
+      //System.out.print(getString(notesAtBeat) + "\n");
 
       for (ANote n : notesAtBeat) {
         if (n.whichType() == INoteType.NOTE) {

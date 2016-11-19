@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import cs3500.music.controller.ConsoleController;
+import cs3500.music.controller.GuiMidiEditorController;
 import cs3500.music.controller.GuiMusicController;
 import cs3500.music.controller.IMusicEditorController;
 import cs3500.music.controller.MidiMusicEditorController;
@@ -62,6 +63,11 @@ public class MEMain {
         case "console":
           view = new ConsoleView(model);
           controller = new ConsoleController(model, view);
+          break;
+        case "guimidi":
+          view = new GuiViewFrame(
+                  model.getHighestNote(), model.getLowestNote(), model.length());
+          controller = new GuiMidiEditorController(model, view);
           break;
         default:
           throw new IllegalArgumentException("Invalid view type given: Must be \"midi\", "
