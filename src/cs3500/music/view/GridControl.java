@@ -77,7 +77,7 @@ public class GridControl {
       //beat line
       g2.setStroke(new BasicStroke(2));
       g2.setColor(Color.RED);
-      g.drawLine((beatPosition+1)*sideLength, sideLength, (beatPosition+1)*sideLength, (ySize + 2) * sideLength);
+      g.drawLine((beatPosition + 1) * sideLength, sideLength, (beatPosition + 1) * sideLength, (ySize + 2) * sideLength);
       g2.setColor(Color.BLACK);
       drawLabels(g);
     }
@@ -112,8 +112,10 @@ public class GridControl {
               new Dimension(sideLength * (xSize + 3),
                       sideLength * (ySize + 3)));
     }
-    public void setBeat(int num){
-      this.beatPosition=num;
+
+    public void setBeat(int num) {
+      this.beatPosition = num;
+      repaint();
     }
 
   }
