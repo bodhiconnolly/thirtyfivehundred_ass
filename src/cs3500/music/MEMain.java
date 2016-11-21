@@ -60,7 +60,7 @@ public class MEMain {
           break;
         case "visual":
           view2 = new GuiViewFrame(
-                  model.getHighestNote(), model.getLowestNote(), model.length());
+                  model.getHighestNote(), model.getLowestNote(), model.length(), true);
           controller = new GuiMusicController(model, view2);
           break;
         case "console":
@@ -69,7 +69,7 @@ public class MEMain {
           break;
         case "guimidi":
           view = new CompositeView(new GuiViewFrame(
-                  model.getHighestNote(), model.getLowestNote(), model.length()),
+                  model.getHighestNote(), model.getLowestNote(), model.length(), false),
                   new MidiViewImpl(model.getTempo()));
           controller = new GuiMidiEditorController(model, view);
           break;

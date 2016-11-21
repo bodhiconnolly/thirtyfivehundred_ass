@@ -1,6 +1,8 @@
 package cs3500.music.view;
 
 import java.awt.*;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyListener;
 
 import javax.swing.*;
@@ -19,11 +21,16 @@ public class GuiViewFrame extends JFrame implements GuiView {
   private int numBeats;
   private int height;
   private KeyListener keyListener;
+  private boolean justScrolled = false;
+  private JScrollPane scroller;
+  private JFrame window;
+  private JTextField input;
+  private JPanel panel;
 
   /**
    * Creates new GuiView.
    */
-  public GuiViewFrame(int highestNote, int lowestNote, int numBeats) {
+  public GuiViewFrame(int highestNote, int lowestNote, int numBeats, boolean editable) {
 
     this.highestNote = highestNote;
     this.lowestNote = lowestNote;
@@ -37,11 +44,20 @@ public class GuiViewFrame extends JFrame implements GuiView {
     //this.getContentPane().setLayout(new BorderLayout());
     grid = new GridControl.Grid(width, height, this.lowestNote);
     grid.setSize();
-    JFrame window = new JFrame();
+    window = new JFrame();
     window.setSize(getPreferredSize());
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    window.add(new JScrollPane(grid, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
-            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED));
+    panel = new JPanel();
+    panel.setLayout(new FlowLayout());
+    input = new JTextField(15);
+    if (editable){
+      panel.add(input);
+    }
+    panel.add(grid);
+
+    scroller = new JScrollPane(panel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+            JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+    window.add(scroller);
     window.setVisible(true);
 
   }
@@ -81,18 +97,30 @@ public class GuiViewFrame extends JFrame implements GuiView {
   }
 
   @Override
-  public void setBeat(int num){
-    grid.setBeat(num);
+  public void setBeat(int num) {
+    JScrollBar vertical = this.scroller.getHorizontalScrollBar();
+    Rectangle r = window.getBounds();
+    int w = r.width;
+    int pixelsSinceScroll = grid.setBeat(num, justScrolled);
+    if (pixelsSinceScroll > w-40){
+      vertical.setValue(vertical.getValue()+w-40);
+      justScrolled = true;
+    }else{
+      justScrolled=false;
+    }
   }
 
   @Override
-  public void keyboardCallback(KeyboardHandler handler){
-    keyListener=handler;
+  public void keyboardCallback(KeyboardHandler handler) {
+    keyListener = handler;
+    input.addKeyListener(keyListener);
+    input.setFocusable(true);
   }
 
   @Override
-  public void scroll(int toScroll){
-
+  public void scroll(int toScroll) {
+    JScrollBar vertical = this.scroller.getHorizontalScrollBar();
+    vertical.setValue(vertical.getValue()+toScroll);
   }
 
   @Override
@@ -100,4 +128,18 @@ public class GuiViewFrame extends JFrame implements GuiView {
     return this.lowestNote;
   }
 
+  @Override
+  public String getTextInput() {
+    String command = this.input.getText();
+    this.input.setText("");
+    return command;
+  }
+
+  @Override
+  public void update(boolean noteChange){
+    if (noteChange){
+      grid.resetNotes();
+    }
+    grid.repaint();
+  }
 }

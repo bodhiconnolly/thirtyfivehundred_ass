@@ -25,6 +25,7 @@ public class GridControl {
     private int sideLength = 20;
 
     private int beatPosition = -1;
+    private int beatScrolled = 0;
 
     public Grid(int xSize, int ySize, int lowestNote) {
       this.xSize = xSize;
@@ -75,10 +76,12 @@ public class GridControl {
       }
 
       //beat line
-      g2.setStroke(new BasicStroke(2));
-      g2.setColor(Color.RED);
-      g.drawLine((beatPosition + 1) * sideLength, sideLength, (beatPosition + 1) * sideLength, (ySize + 2) * sideLength);
-      g2.setColor(Color.BLACK);
+      if (beatPosition != -1) {
+        g2.setStroke(new BasicStroke(2));
+        g2.setColor(Color.RED);
+        g.drawLine((beatPosition + 1) * sideLength, sideLength, (beatPosition + 1) * sideLength, (ySize + 2) * sideLength);
+        g2.setColor(Color.BLACK);
+      }
       drawLabels(g);
     }
 
@@ -113,9 +116,20 @@ public class GridControl {
                       sideLength * (ySize + 3)));
     }
 
-    public void setBeat(int num) {
-      this.beatPosition = num;
+    public int setBeat(int num, boolean scrolled) {
+      this.beatPosition = num + 1;
       repaint();
+      if (scrolled) {
+        beatScrolled = 1;
+      } else {
+        beatScrolled += 1;
+      }
+      return beatScrolled * sideLength;
+    }
+
+    public void resetNotes(){
+      fillCellsBlack.clear();
+      fillCellsGreen.clear();
     }
 
   }

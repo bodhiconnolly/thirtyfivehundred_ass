@@ -42,7 +42,7 @@ public class TestMEMain {
           break;
         case "visual":
           view2 = new GuiViewFrame(
-                  model.getHighestNote(), model.getLowestNote(), model.length());
+                  model.getHighestNote(), model.getLowestNote(), model.length(), true);
           controller = new GuiMusicController(model, view2);
           break;
         case "console":

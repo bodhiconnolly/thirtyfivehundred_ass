@@ -1,5 +1,6 @@
 package cs3500.music.controller;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import cs3500.music.model.ANote;
@@ -25,8 +26,11 @@ public class GuiMusicController implements IMusicEditorController {
     this.model = model;
     this.view = view;
 
-    //keyboardHandler.addRunnable();
-    this.view.keyboardCallback(this.keyboardHandler);
+    keyboardHandler = new KeyboardHandler();
+    keyboardHandler.addRunnable(KeyEvent.VK_ENTER, () -> actOnString(view.getTextInput()));
+    keyboardHandler.addRunnable(KeyEvent.VK_LEFT, () -> view.scroll(-50));
+    keyboardHandler.addRunnable(KeyEvent.VK_RIGHT, () -> view.scroll(50));
+    this.view.keyboardCallback(keyboardHandler);
 
 
   }
@@ -37,6 +41,41 @@ public class GuiMusicController implements IMusicEditorController {
     // Uncomment the following line to render the music editor in the model
     //System.out.print(model.toString());
 
+   renderNotes();
+  }
+
+  public void actOnString(String commandIn) {
+    //System.out.print("act on string: " + commandIn);
+    try {
+      String[] data = commandIn.split(",");
+      switch (data[0]) {
+        case "a":
+          addNote(Integer.parseInt(data[1]),
+                  Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+                  Integer.parseInt(data[4]));
+          break;
+        case "d":
+          removeNote(Integer.parseInt(data[1]),
+                  Integer.parseInt(data[2]), Integer.parseInt(data[3]),
+                  Integer.parseInt(data[4]));
+          break;
+        default:
+          System.out.print("Not valid command");
+          break;
+      }
+    } catch (Exception e) {
+      System.err.println("Invalid command: " + e.getMessage());
+
+    }
+    view.update(true);
+    renderNotes();
+    view.update(false);
+
+
+
+  }
+
+  private void renderNotes(){
     int numBeats = model.length();
 
     for (int i = 0; i < numBeats; ++i) {
@@ -48,7 +87,21 @@ public class GuiMusicController implements IMusicEditorController {
         }
       }
     }
-
-    //view.setBeat(7);
   }
+
+  private void addNote(int pitch, int baseInterval, int beat, int duration) {
+    //System.out.print(pitch);
+    //System.out.print(baseInterval);
+    //System.out.print(beat);
+    //System.out.print(duration);
+    model.addNote(pitch-1, baseInterval+2, beat, duration, 1);
+  }
+
+  private void removeNote(int pitch, int baseInterval, int beat, int duration) {
+    System.out.print(pitch);
+    System.out.print(baseInterval);
+    System.out.print(beat);
+    System.out.print(duration);
+  }
+
 }

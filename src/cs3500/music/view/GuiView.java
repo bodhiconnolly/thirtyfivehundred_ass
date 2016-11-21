@@ -12,6 +12,7 @@ public interface GuiView extends IMusicEditorView {
   void setBeat(int beat);
   void scroll(int toScroll);
   int getLowestNote();
-
+  String getTextInput();
+  void update(boolean noteChange);
 }
 
