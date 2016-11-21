@@ -13,6 +13,11 @@ public class DiatonicScale extends AScale {
     return pArray;
   }
 
+  /**
+   * Return the character representation of a note.
+   * @param pitch The pitch to be converted to a string.
+   * @return the character of the note.
+   */
   public String toString(int pitch) {
     switch (pitch) {
       case 1: return "C";

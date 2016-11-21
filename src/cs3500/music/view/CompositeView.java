@@ -1,18 +1,23 @@
 package cs3500.music.view;
 
-import java.awt.*;
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
 import cs3500.music.controller.KeyboardHandler;
 
 /**
- * Created by matteoalampi on 11/19/16.
+ * A class for visualising a song and playing it simultaneously.
  */
 public class CompositeView implements GuiView {
   GuiView guiView;
   MidiViewImpl midiView;
   ArrayList<ArrayList<Note>> notes;
 
+  /**
+   * Initialize view class with two view classes.
+   * @param guiView the visual class.
+   * @param midiView the midi class.
+   */
   public CompositeView(GuiView guiView, MidiViewImpl midiView) {
     this.guiView = guiView;
     this.midiView = midiView;
@@ -74,7 +79,8 @@ public class CompositeView implements GuiView {
 
   @Override
   public void scroll(int toScroll) {
-
+    // Scroll is taken care of automatically here.
+    throw new InvalidParameterException("Scroll is automatic in this view");
   }
 
   @Override
@@ -89,7 +95,8 @@ public class CompositeView implements GuiView {
 
   @Override
   public void update(boolean noteChange) {
-
+    // Scroll is taken care of automatically here.
+    throw new InvalidParameterException("Update is automatic in this view");
   }
 
   class Note {

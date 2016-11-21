@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 /**
  * Represent the model for a music editor.
- *
  * Models a song as a collection of notes (containing pitch, base interval (ex. octave),
  * and duration) which begin at specific beats (time steps). Provides methods for adding, accessing,
  * and editing notes. Additionally, provides methods for getting information about the track, such

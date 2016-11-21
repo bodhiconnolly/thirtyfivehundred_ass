@@ -24,7 +24,7 @@ public class MusicReader {
    * @param readable The source of data for the cs3500.music.music composition
    * @param piece A builder for helping to construct a new composition
    * @param <T> The main model interface type describing music compositions
-   * @return
+   * @return the song.
    */
   public static <T> T parseFile(Readable readable, CompositionBuilder<T> piece) {
     Scanner scanner = new Scanner(readable);

@@ -1,13 +1,9 @@
 package cs3500.music.view;
 
-import java.util.ArrayList;
-
-import cs3500.music.model.ANote;
 import cs3500.music.model.IMusicEditorModel;
-import cs3500.music.model.INoteType;
 
 /**
- *
+ * A class for viewing a song in the console.
  */
 public class ConsoleView implements IMusicEditorView {
   private IMusicEditorModel model;
@@ -23,7 +19,7 @@ public class ConsoleView implements IMusicEditorView {
 
   @Override
   public void setTempo(int tempo) {
-
+    // no tempo for visual view
   }
 
   @Override

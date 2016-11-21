@@ -1,17 +1,14 @@
 package cs3500.music.model;
 
-import java.util.ArrayList;
-
 import javax.sound.midi.MidiMessage;
-import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 
 /**
- * Represents a mock of a receiver for use in testing
+ * Represents a mock of a receiver for use in testing.
  */
 class ReceiverMock implements Receiver {
-  StringBuilder sb;
+  private StringBuilder sb;
 
   ReceiverMock(StringBuilder sb) {
     this.sb = sb;

@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.sound.midi.Instrument;
 import javax.sound.midi.MidiChannel;
-import javax.sound.midi.MidiDevice;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Patch;
 import javax.sound.midi.Receiver;

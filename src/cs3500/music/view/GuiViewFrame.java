@@ -1,11 +1,16 @@
 package cs3500.music.view;
 
-import java.awt.*;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyListener;
+import java.awt.FlowLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Rectangle;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+import javax.swing.JScrollBar;
 
 import cs3500.music.controller.KeyboardHandler;
 
@@ -16,38 +21,31 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   //private final JPanel displayPanel; // You may want to refine this to a subtype of JPanel
   private GridControl.Grid grid;
-  private int highestNote;
   private int lowestNote;
-  private int numBeats;
   private int height;
-  private KeyListener keyListener;
   private boolean justScrolled = false;
   private JScrollPane scroller;
   private JFrame window;
   private JTextField input;
-  private JPanel panel;
 
   /**
    * Creates new GuiView.
    */
   public GuiViewFrame(int highestNote, int lowestNote, int numBeats, boolean editable) {
 
-    this.highestNote = highestNote;
     this.lowestNote = lowestNote;
-    this.numBeats = numBeats;
 
     //this.displayPanel = new ConcreteGuiViewPanel();
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-    height = this.highestNote - this.lowestNote;
-    int width = this.numBeats;
+    height = highestNote - this.lowestNote;
     //this.getContentPane().setLayout(new BorderLayout());
-    grid = new GridControl.Grid(width, height, this.lowestNote);
+    grid = new GridControl.Grid(numBeats, height, this.lowestNote);
     grid.setSize();
     window = new JFrame();
     window.setSize(getPreferredSize());
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    panel = new JPanel();
+    JPanel panel = new JPanel();
     panel.setLayout(new FlowLayout());
     input = new JTextField(15);
     if (editable) {
@@ -112,8 +110,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   @Override
   public void keyboardCallback(KeyboardHandler handler) {
-    keyListener = handler;
-    input.addKeyListener(keyListener);
+    input.addKeyListener(handler);
     input.setFocusable(true);
   }
 
