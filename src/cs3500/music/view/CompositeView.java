@@ -12,6 +12,9 @@ public class CompositeView implements GuiView {
   GuiView guiView;
   MidiViewImpl midiView;
   ArrayList<ArrayList<Note>> notes;
+  int endOfSong;
+  int curBeat; // Current position in playback of song
+  boolean playing; // Whether or not song is playing
 
   /**
    * Initialize view class with two view classes.
@@ -23,14 +26,28 @@ public class CompositeView implements GuiView {
     this.midiView = midiView;
     this.notes = new ArrayList<>();
     notes.add(new ArrayList<>());
+    this.endOfSong = 0;
+    this.curBeat = 0;
+    this.playing = false;
   }
 
   @Override
   public void renderNote(int rawPitch, int volume, int duration, int instrument, int beatnum) {
     if (rawPitch == -1 && volume == -1 && duration == -1 && instrument == -1 && beatnum == -1) {
-      int curBeat = 0;
-      for (ArrayList<Note> aln : notes) {
-        for (Note n : aln) {
+      // Render the notes in the composite view as midi sounds. Advance the red line in the gui
+      // view for each beat.
+
+      if (!playing) {
+        playing = true;
+      }
+      else {
+        playing = false;
+        return;
+      }
+
+      for (int i = curBeat; i < notes.size() && playing; i++) {
+        for (int j = 0; j < notes.get(i).size(); j++) {
+          Note n = notes.get(i).get(j);
           this.midiView.renderNote(n.rawPitch, n.volume, n.duration, n.instrument, n.beatnum);
         }
         setBeat(curBeat);
@@ -41,12 +58,22 @@ public class CompositeView implements GuiView {
           e.printStackTrace();
         }
       }
-      try {
-        Thread.sleep(800);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+      // Keep advancing the red line on the gui view
+      while (curBeat <= endOfSong && playing) {
+        setBeat(curBeat);
+        curBeat = curBeat + 1;
+        try {
+          Thread.sleep(this.getTempo() / 1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
       }
+
     } else {
+      // Update end of song if necessary
+      if (endOfSong < beatnum + duration) {
+        endOfSong = beatnum + duration;
+      }
       int lowestNote = guiView.getLowestNote();
       guiView.renderNote(rawPitch - lowestNote - 12, 1, duration, instrument, beatnum);
       int beatsToAdd = (beatnum + 1) - notes.size();
@@ -99,7 +126,14 @@ public class CompositeView implements GuiView {
     throw new InvalidParameterException("Update is automatic in this view");
   }
 
-  class Note {
+  /**
+   * Representation of a note for use in the composite view. Doesn't use the same represenation
+   * as in the model to keep them decoupled. Notes could have been represented as a list of ints
+   * or as a series of lists of ints, but this seems more comprehensible. Created it as a private
+   * inner class because it doesn't need to be used nor should it be used anywhere other than in
+   * the CompositeView class.
+   */
+  private class Note {
     int rawPitch;
     int volume;
     int duration;
