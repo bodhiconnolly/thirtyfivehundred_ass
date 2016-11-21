@@ -6,6 +6,11 @@ import cs3500.music.controller.KeyboardHandler;
 
 /**
  * Represents a composite music editor view that includes both a GUI view and a MIDI view.
+ * Given a GUI and MIDI view when constructed. Add a note by using renderNote. This adds the note
+ * to the view and renders it in the GUI. When renderNote is called with all arguments set to -1,
+ * the notes will be rendered in MIDI. This is done (instead of splitting it into two methods)
+ * so that the original super interface, IMusicEditorView, does not need to be changed to support
+ * this implementation.
  */
 public class CompositeView implements GuiView {
   GuiView guiView;
@@ -40,6 +45,15 @@ public class CompositeView implements GuiView {
       }
 
       for (int i = curBeat; i < notes.size() && playing; i++) {
+
+        ///////// TODO: REMOVE
+        // TEST TEST TEST
+        if (curBeat == 50) {
+          curBeat = 51;
+          playing = false;
+        }
+
+
         for (int j = 0; j < notes.get(i).size(); j++) {
           Note n = notes.get(i).get(j);
           this.midiView.renderNote(n.rawPitch, n.volume, n.duration, n.instrument, n.beatnum);
