@@ -50,7 +50,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
     panel = new JPanel();
     panel.setLayout(new FlowLayout());
     input = new JTextField(15);
-    if (editable){
+    if (editable) {
       panel.add(input);
     }
     panel.add(grid);
@@ -102,11 +102,11 @@ public class GuiViewFrame extends JFrame implements GuiView {
     Rectangle r = window.getBounds();
     int w = r.width;
     int pixelsSinceScroll = grid.setBeat(num, justScrolled);
-    if (pixelsSinceScroll > w-40){
-      vertical.setValue(vertical.getValue()+w-40);
+    if (pixelsSinceScroll > w - 80) {
+      vertical.setValue(vertical.getValue() + w - 40);
       justScrolled = true;
-    }else{
-      justScrolled=false;
+    } else {
+      justScrolled = false;
     }
   }
 
@@ -120,7 +120,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
   @Override
   public void scroll(int toScroll) {
     JScrollBar vertical = this.scroller.getHorizontalScrollBar();
-    vertical.setValue(vertical.getValue()+toScroll);
+    vertical.setValue(vertical.getValue() + toScroll);
   }
 
   @Override
@@ -136,8 +136,8 @@ public class GuiViewFrame extends JFrame implements GuiView {
   }
 
   @Override
-  public void update(boolean noteChange){
-    if (noteChange){
+  public void update(boolean noteChange) {
+    if (noteChange) {
       grid.resetNotes();
     }
     grid.repaint();

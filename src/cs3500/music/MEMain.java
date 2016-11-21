@@ -26,6 +26,7 @@ public class MEMain {
 
   /**
    * Represent the main method for running the program.
+   *
    * @param args command line arguments
    */
   public static void main(String[] args) {

@@ -21,7 +21,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
    * Initialises the controller object.
    *
    * @param model the model for the controller.
-   * @param view the view for the controller.
+   * @param view  the view for the controller.
    */
   public GuiMidiEditorController(IMusicEditorModel model, GuiView view) {
     this.model = model;
@@ -63,7 +63,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
     view.renderNote(-1, -1, -1, -1, -1);
   }
 
-  void togglePlay(){
+  void togglePlay() {
     System.out.print("play/pause");
   }
 }

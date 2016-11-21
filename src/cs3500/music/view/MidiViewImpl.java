@@ -18,6 +18,7 @@ public class MidiViewImpl implements IMusicEditorView {
 
   /**
    * Build a MIDI view with the given tempo.
+   *
    * @param tempo Tempo of the view
    */
   public MidiViewImpl(int tempo) {
@@ -33,6 +34,7 @@ public class MidiViewImpl implements IMusicEditorView {
 
   /**
    * Build a MIDI view with given tempo and synth. ONLY for use with testing.
+   *
    * @param tempo Tempo of the view
    * @param synth Synth to be used for testing.
    */
@@ -51,8 +53,7 @@ public class MidiViewImpl implements IMusicEditorView {
   public void renderNote(int rawPitch, int volume, int duration, int instrument, int beatnum) {
     try {
       this.playNote(rawPitch, volume, duration, instrument);
-    }
-    catch (InvalidMidiDataException e) {
+    } catch (InvalidMidiDataException e) {
       e.printStackTrace();
     }
   }

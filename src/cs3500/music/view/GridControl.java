@@ -8,12 +8,15 @@ import javax.swing.JPanel;
 
 import cs3500.music.model.DiatonicScale;
 
-public class GridControl {
+/**
+ * A class for creating and customizing a grid.
+ */
+class GridControl {
 
   /**
    * Grid that is controller.
    */
-  public static class Grid extends JPanel {
+  static class Grid extends JPanel {
 
     private List<Point> fillCellsBlack;
     private List<Point> fillCellsGreen;
@@ -27,7 +30,7 @@ public class GridControl {
     private int beatPosition = -1;
     private int beatScrolled = 0;
 
-    public Grid(int xSize, int ySize, int lowestNote) {
+    Grid(int xSize, int ySize, int lowestNote) {
       this.xSize = xSize;
       this.ySize = ySize;
       this.lowestNote = lowestNote;
@@ -101,7 +104,7 @@ public class GridControl {
       }
     }
 
-    public void fillCell(int x, int y, Color c) {
+    void fillCell(int x, int y, Color c) {
       if (c == Color.BLACK) {
         fillCellsBlack.add(new Point(x, y));
       } else {
@@ -110,13 +113,13 @@ public class GridControl {
       repaint();
     }
 
-    public void setSize() {
+    void setSize() {
       super.setPreferredSize(
               new Dimension(sideLength * (xSize + 3),
                       sideLength * (ySize + 3)));
     }
 
-    public int setBeat(int num, boolean scrolled) {
+    int setBeat(int num, boolean scrolled) {
       this.beatPosition = num + 1;
       repaint();
       if (scrolled) {
@@ -127,7 +130,7 @@ public class GridControl {
       return beatScrolled * sideLength;
     }
 
-    public void resetNotes(){
+    void resetNotes() {
       fillCellsBlack.clear();
       fillCellsGreen.clear();
     }

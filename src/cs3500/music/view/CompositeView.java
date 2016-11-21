@@ -28,7 +28,7 @@ public class CompositeView implements GuiView {
         for (Note n : aln) {
           this.midiView.renderNote(n.rawPitch, n.volume, n.duration, n.instrument, n.beatnum);
         }
-        this.guiView.setBeat(curBeat);
+        setBeat(curBeat);
         curBeat = curBeat + 1;
         try {
           Thread.sleep(this.getTempo() / 1000);
@@ -41,8 +41,7 @@ public class CompositeView implements GuiView {
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
-    }
-    else {
+    } else {
       int lowestNote = guiView.getLowestNote();
       guiView.renderNote(rawPitch - lowestNote - 12, 1, duration, instrument, beatnum);
       int beatsToAdd = (beatnum + 1) - notes.size();
@@ -65,12 +64,12 @@ public class CompositeView implements GuiView {
 
   @Override
   public void keyboardCallback(KeyboardHandler handler) {
-
+    guiView.keyboardCallback(handler);
   }
 
   @Override
   public void setBeat(int beat) {
-
+    this.guiView.setBeat(beat);
   }
 
   @Override
@@ -100,7 +99,7 @@ public class CompositeView implements GuiView {
     int instrument;
     int beatnum;
 
-    Note (int rawPitch, int volume, int duration, int instrument, int beatnum) {
+    Note(int rawPitch, int volume, int duration, int instrument, int beatnum) {
       this.rawPitch = rawPitch;
       this.volume = volume;
       this.duration = duration;

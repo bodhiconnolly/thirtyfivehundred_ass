@@ -22,7 +22,7 @@ public class KeyboardHandler implements KeyListener {
     char c = e.getKeyChar();
     //System.out.print(c);
     Runnable toRun = mapping.get(e.getKeyCode());
-    if (toRun!=null){
+    if (toRun != null) {
       toRun.run();
     }
   }
@@ -32,7 +32,7 @@ public class KeyboardHandler implements KeyListener {
 
   }
 
-  public void addRunnable(Integer keyCode, Runnable runner){
+  public void addRunnable(Integer keyCode, Runnable runner) {
     //System.out.print(mapping);
     mapping.put(keyCode, runner);
   }

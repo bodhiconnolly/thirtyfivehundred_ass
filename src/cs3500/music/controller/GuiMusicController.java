@@ -41,7 +41,7 @@ public class GuiMusicController implements IMusicEditorController {
     // Uncomment the following line to render the music editor in the model
     //System.out.print(model.toString());
 
-   renderNotes();
+    renderNotes();
   }
 
   public void actOnString(String commandIn) {
@@ -72,10 +72,9 @@ public class GuiMusicController implements IMusicEditorController {
     view.update(false);
 
 
-
   }
 
-  private void renderNotes(){
+  private void renderNotes() {
     int numBeats = model.length();
 
     for (int i = 0; i < numBeats; ++i) {
@@ -94,7 +93,7 @@ public class GuiMusicController implements IMusicEditorController {
     //System.out.print(baseInterval);
     //System.out.print(beat);
     //System.out.print(duration);
-    model.addNote(pitch-1, baseInterval+2, beat, duration, 1);
+    model.addNote(pitch - 1, baseInterval + 2, beat, duration, 1);
   }
 
   private void removeNote(int pitch, int baseInterval, int beat, int duration) {

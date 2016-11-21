@@ -20,7 +20,7 @@ public class MidiMusicEditorController implements IMusicEditorController {
    * Initialises the controller object.
    *
    * @param model the model for the controller.
-   * @param view the view for the controller.
+   * @param view  the view for the controller.
    */
   public MidiMusicEditorController(IMusicEditorModel model, IMusicEditorView view) {
     this.model = model;
