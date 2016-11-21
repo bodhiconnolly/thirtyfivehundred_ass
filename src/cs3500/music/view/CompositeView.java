@@ -9,16 +9,17 @@ import cs3500.music.controller.KeyboardHandler;
  * A class for visualising a song and playing it simultaneously.
  */
 public class CompositeView implements GuiView {
-  GuiView guiView;
-  MidiViewImpl midiView;
-  ArrayList<ArrayList<Note>> notes;
-  int endOfSong;
-  int curBeat; // Current position in playback of song
-  boolean playing; // Whether or not song is playing
+  private GuiView guiView;
+  private MidiViewImpl midiView;
+  private ArrayList<ArrayList<Note>> notes;
+  private int endOfSong;
+  private int curBeat; // Current position in playback of song
+  private boolean playing; // Whether or not song is playing
 
   /**
    * Initialize view class with two view classes.
-   * @param guiView the visual class.
+   *
+   * @param guiView  the visual class.
    * @param midiView the midi class.
    */
   public CompositeView(GuiView guiView, MidiViewImpl midiView) {
@@ -39,8 +40,7 @@ public class CompositeView implements GuiView {
 
       if (!playing) {
         playing = true;
-      }
-      else {
+      } else {
         playing = false;
         return;
       }

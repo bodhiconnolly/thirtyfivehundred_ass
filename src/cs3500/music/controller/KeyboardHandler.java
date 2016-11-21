@@ -20,7 +20,7 @@ public class KeyboardHandler implements KeyListener {
   @Override
   public void keyPressed(KeyEvent e) {
     char c = e.getKeyChar();
-    //System.out.print(c);
+    System.out.print(c);
     Runnable toRun = mapping.get(e.getKeyCode());
     if (toRun != null) {
       toRun.run();

@@ -27,6 +27,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
   private JScrollPane scroller;
   private JFrame window;
   private JTextField input;
+  private boolean editable;
 
   /**
    * Creates new GuiView.
@@ -34,6 +35,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
   public GuiViewFrame(int highestNote, int lowestNote, int numBeats, boolean editable) {
 
     this.lowestNote = lowestNote;
+    this.editable = editable;
 
     //this.displayPanel = new ConcreteGuiViewPanel();
     this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -44,7 +46,7 @@ public class GuiViewFrame extends JFrame implements GuiView {
     grid.setSize();
     window = new JFrame();
     window.setSize(getPreferredSize());
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     JPanel panel = new JPanel();
     panel.setLayout(new FlowLayout());
     input = new JTextField(15);
@@ -110,8 +112,14 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   @Override
   public void keyboardCallback(KeyboardHandler handler) {
-    input.addKeyListener(handler);
-    input.setFocusable(true);
+    if (editable){
+      input.addKeyListener(handler);
+      input.setFocusable(true);
+    }else{
+      window.addKeyListener(handler);
+      window.setFocusable(true);
+    }
+
   }
 
   @Override
