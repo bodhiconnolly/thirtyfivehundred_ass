@@ -12,12 +12,14 @@ public class CompositeView implements GuiView {
   GuiView guiView;
   MidiViewImpl midiView;
   ArrayList<ArrayList<Note>> notes;
+  int endOfSong;
 
   public CompositeView(GuiView guiView, MidiViewImpl midiView) {
     this.guiView = guiView;
     this.midiView = midiView;
     this.notes = new ArrayList<>();
     notes.add(new ArrayList<>());
+    int endOfSong = 0;
   }
 
   @Override
@@ -36,12 +38,21 @@ public class CompositeView implements GuiView {
           e.printStackTrace();
         }
       }
-      try {
-        Thread.sleep(800);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
+      while (curBeat <= endOfSong) {
+        setBeat(curBeat);
+        curBeat = curBeat + 1;
+        try {
+          Thread.sleep(this.getTempo() / 1000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
       }
+
     } else {
+      // Update end of song if necessary
+      if (endOfSong < beatnum + duration) {
+        endOfSong = beatnum + duration;
+      }
       int lowestNote = guiView.getLowestNote();
       guiView.renderNote(rawPitch - lowestNote - 12, 1, duration, instrument, beatnum);
       int beatsToAdd = (beatnum + 1) - notes.size();
