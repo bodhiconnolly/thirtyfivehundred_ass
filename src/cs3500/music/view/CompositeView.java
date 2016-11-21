@@ -52,14 +52,6 @@ public class CompositeView implements GuiView {
 
       for (int i = curBeat; i < notes.size() && playing; i++) {
 
-        ///////// TODO: REMOVE
-        // TEST TEST TEST
-        if (curBeat == 50) {
-          curBeat = 51;
-          playing = false;
-        }
-
-
         for (int j = 0; j < notes.get(i).size(); j++) {
           Note n = notes.get(i).get(j);
           this.midiView.renderNote(n.rawPitch, n.volume, n.duration, n.instrument, n.beatnum);

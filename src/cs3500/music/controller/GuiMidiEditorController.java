@@ -54,13 +54,6 @@ public class GuiMidiEditorController implements IMusicEditorController {
 
     // Tell the view to start playing
     view.renderNote(-1, -1, -1, -1, -1);
-    try {
-      Thread.sleep(500);
-      System.out.print("\nWoke up");
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    view.renderNote(-1, -1, -1, -1, -1);
   }
 
   void togglePlay() {
