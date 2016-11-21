@@ -24,6 +24,11 @@ public class GuiMidiEditorController implements IMusicEditorController {
   public GuiMidiEditorController(IMusicEditorModel model, GuiView view) {
     this.model = model;
     this.view = view;
+    KeyboardHandler keyboardHandler;
+    keyboardHandler = new KeyboardHandler();
+    keyboardHandler.addRunnable(KeyEvent.VK_SPACE, () -> togglePlay());
+    this.view.keyboardCallback(keyboardHandler);
+
   }
 
   @Override
@@ -42,13 +47,8 @@ public class GuiMidiEditorController implements IMusicEditorController {
     }
 
 
-    KeyboardHandler keyboardHandler;
-    keyboardHandler = new KeyboardHandler();
-    //keyboardHandler.addRunnable(KeyEvent.VK_LEFT, () -> view.scroll(-50));
-    //keyboardHandler.addRunnable(KeyEvent.VK_RIGHT, () -> view.scroll(50));
-    keyboardHandler.addRunnable(KeyEvent.VK_SPACE, () -> togglePlay());
 
-    this.view.keyboardCallback(keyboardHandler);
+
 
     // Wait for gui view to fully load
     try {
@@ -63,5 +63,6 @@ public class GuiMidiEditorController implements IMusicEditorController {
 
   void togglePlay() {
     System.out.print("play/pause");
+    view.renderNote(-1, -1, -1, -1, -1);
   }
 }

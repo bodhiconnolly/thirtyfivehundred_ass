@@ -1,33 +1,47 @@
 package cs3500.music.view;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 import cs3500.music.controller.KeyboardHandler;
 
 /**
- * Created by matteoalampi on 11/19/16.
+ * Represents a composite music editor view that includes both a GUI view and a MIDI view.
  */
 public class CompositeView implements GuiView {
   GuiView guiView;
   MidiViewImpl midiView;
   ArrayList<ArrayList<Note>> notes;
   int endOfSong;
+  int curBeat; // Current position in playback of song
+  boolean playing; // Whether or not song is playing
 
   public CompositeView(GuiView guiView, MidiViewImpl midiView) {
     this.guiView = guiView;
     this.midiView = midiView;
     this.notes = new ArrayList<>();
     notes.add(new ArrayList<>());
-    int endOfSong = 0;
+    this.endOfSong = 0;
+    this.curBeat = 0;
+    this.playing = false;
   }
 
   @Override
   public void renderNote(int rawPitch, int volume, int duration, int instrument, int beatnum) {
     if (rawPitch == -1 && volume == -1 && duration == -1 && instrument == -1 && beatnum == -1) {
-      int curBeat = 0;
-      for (ArrayList<Note> aln : notes) {
-        for (Note n : aln) {
+      // Render the notes in the composite view as midi sounds. Advance the red line in the gui
+      // view for each beat.
+
+      if (!playing) {
+        playing = true;
+      }
+      else {
+        playing = false;
+        return;
+      }
+
+      for (int i = curBeat; i < notes.size() && playing; i++) {
+        for (int j = 0; j < notes.get(i).size(); j++) {
+          Note n = notes.get(i).get(j);
           this.midiView.renderNote(n.rawPitch, n.volume, n.duration, n.instrument, n.beatnum);
         }
         setBeat(curBeat);
@@ -38,7 +52,8 @@ public class CompositeView implements GuiView {
           e.printStackTrace();
         }
       }
-      while (curBeat <= endOfSong) {
+      // Keep advancing the red line on the gui view
+      while (curBeat <= endOfSong && playing) {
         setBeat(curBeat);
         curBeat = curBeat + 1;
         try {
@@ -103,7 +118,14 @@ public class CompositeView implements GuiView {
 
   }
 
-  class Note {
+  /**
+   * Representation of a note for use in the composite view. Doesn't use the same represenation
+   * as in the model to keep them decoupled. Notes could have been represented as a list of ints
+   * or as a series of lists of ints, but this seems more comprehensible. Created it as a private
+   * inner class because it doesn't need to be used nor should it be used anywhere other than in
+   * the CompositeView class.
+   */
+  private class Note {
     int rawPitch;
     int volume;
     int duration;
