@@ -14,7 +14,6 @@ import cs3500.music.view.GuiView;
 public class GuiMusicController implements IMusicEditorController {
   private IMusicEditorModel model;
   private GuiView view;
-  private KeyboardHandler keyboardHandler;
 
   /**
    * Initialises a Gui Controller object.
@@ -26,6 +25,7 @@ public class GuiMusicController implements IMusicEditorController {
     this.model = model;
     this.view = view;
 
+    KeyboardHandler keyboardHandler;
     keyboardHandler = new KeyboardHandler();
     keyboardHandler.addRunnable(KeyEvent.VK_ENTER, () -> actOnString(view.getTextInput()));
     keyboardHandler.addRunnable(KeyEvent.VK_LEFT, () -> view.scroll(-50));

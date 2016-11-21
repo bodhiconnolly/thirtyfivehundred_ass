@@ -1,11 +1,13 @@
 package cs3500.music.controller;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import cs3500.music.model.ANote;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.INoteType;
 import cs3500.music.view.CompositeView;
+import cs3500.music.view.GuiView;
 import cs3500.music.view.IMusicEditorView;
 
 /**
@@ -13,7 +15,7 @@ import cs3500.music.view.IMusicEditorView;
  */
 public class GuiMidiEditorController implements IMusicEditorController {
   IMusicEditorModel model;
-  IMusicEditorView view;
+  GuiView view;
 
   /**
    * Initialises the controller object.
@@ -21,7 +23,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
    * @param model the model for the controller.
    * @param view the view for the controller.
    */
-  public GuiMidiEditorController(IMusicEditorModel model, IMusicEditorView view) {
+  public GuiMidiEditorController(IMusicEditorModel model, GuiView view) {
     this.model = model;
     this.view = view;
   }
@@ -40,13 +42,28 @@ public class GuiMidiEditorController implements IMusicEditorController {
         }
       }
     }
+
+
+    KeyboardHandler keyboardHandler;
+    keyboardHandler = new KeyboardHandler();
+    //keyboardHandler.addRunnable(KeyEvent.VK_LEFT, () -> view.scroll(-50));
+    //keyboardHandler.addRunnable(KeyEvent.VK_RIGHT, () -> view.scroll(50));
+    keyboardHandler.addRunnable(KeyEvent.VK_SPACE, () -> togglePlay());
+
+    this.view.keyboardCallback(keyboardHandler);
+
     // Wait for gui view to fully load
     try {
       Thread.sleep(2000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
+
     // Tell the view to start playing
     view.renderNote(-1, -1, -1, -1, -1);
+  }
+
+  void togglePlay(){
+    System.out.print("play/pause");
   }
 }

@@ -3,10 +3,12 @@ package cs3500.music.view;
 import java.awt.*;
 import java.util.ArrayList;
 
+import cs3500.music.controller.KeyboardHandler;
+
 /**
  * Created by matteoalampi on 11/19/16.
  */
-public class CompositeView implements IMusicEditorView {
+public class CompositeView implements GuiView {
   GuiView guiView;
   MidiViewImpl midiView;
   ArrayList<ArrayList<Note>> notes;
@@ -59,6 +61,36 @@ public class CompositeView implements IMusicEditorView {
   @Override
   public int getTempo() {
     return midiView.getTempo();
+  }
+
+  @Override
+  public void keyboardCallback(KeyboardHandler handler) {
+
+  }
+
+  @Override
+  public void setBeat(int beat) {
+
+  }
+
+  @Override
+  public void scroll(int toScroll) {
+
+  }
+
+  @Override
+  public int getLowestNote() {
+    return 0;
+  }
+
+  @Override
+  public String getTextInput() {
+    return null;
+  }
+
+  @Override
+  public void update(boolean noteChange) {
+
   }
 
   class Note {
