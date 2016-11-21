@@ -3,7 +3,6 @@ package cs3500.music.model;
 /**
  * Represent a note space. Provides methods to get information (such as pitch, beat, duration, etc.)
  * about the note and to edit the note.
- *
  * An ANote can be a Note, Sustain, or Rest.
  */
 public abstract class ANote {
@@ -30,7 +29,7 @@ public abstract class ANote {
 
   /**
    * Get duration of the given cs3500.music.model.ANote.
-   * @return
+   * @return the duration.
    */
   public abstract int getDuration();
 

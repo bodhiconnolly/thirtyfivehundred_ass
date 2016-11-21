@@ -14,7 +14,7 @@ public class KeyboardHandler implements KeyListener {
 
   @Override
   public void keyTyped(KeyEvent e) {
-
+    // no need for these events
   }
 
   @Override
@@ -29,7 +29,7 @@ public class KeyboardHandler implements KeyListener {
 
   @Override
   public void keyReleased(KeyEvent e) {
-
+    // no need for these events
   }
 
   public void addRunnable(Integer keyCode, Runnable runner) {

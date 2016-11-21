@@ -6,12 +6,10 @@ import java.util.ArrayList;
 import cs3500.music.model.ANote;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.INoteType;
-import cs3500.music.view.CompositeView;
 import cs3500.music.view.GuiView;
-import cs3500.music.view.IMusicEditorView;
 
 /**
- * Represent a GUI/MIDI editor controller
+ * A controller for simultaneous rendering of gui and midi views.
  */
 public class GuiMidiEditorController implements IMusicEditorController {
   IMusicEditorModel model;

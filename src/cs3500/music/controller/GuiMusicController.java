@@ -44,7 +44,7 @@ public class GuiMusicController implements IMusicEditorController {
     renderNotes();
   }
 
-  public void actOnString(String commandIn) {
+  private void actOnString(String commandIn) {
     //System.out.print("act on string: " + commandIn);
     try {
       String[] data = commandIn.split(",");
