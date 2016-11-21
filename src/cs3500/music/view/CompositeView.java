@@ -43,6 +43,7 @@ public class CompositeView implements GuiView {
       // Render the notes in the composite view as midi sounds. Advance the red line in the gui
       // view for each beat.
 
+      // Toggle whether the song is playing or not
       if (!playing) {
         playing = true;
       } else {
@@ -50,6 +51,7 @@ public class CompositeView implements GuiView {
         return;
       }
 
+      // Play the song starting from the current beat
       for (int i = curBeat; i < notes.size() && playing; i++) {
 
         for (int j = 0; j < notes.get(i).size(); j++) {
