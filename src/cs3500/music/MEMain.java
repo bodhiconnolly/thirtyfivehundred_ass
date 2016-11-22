@@ -31,21 +31,15 @@ public class MEMain {
    */
   public static void main(String[] args) {
     try {
-      // Take song name input (just here for fun, thus the reason we didn't waste our time putting
-      // it into the controller and validating inputs)
-      Scanner scanner = new Scanner(System.in);
       String songToPlay;
       String viewType;
-//      try {
-//        songToPlay = args[0];
-//        viewType = args[1];
-//      }
-//      catch (ArrayIndexOutOfBoundsException e) {
-//        System.out.print("No command line args given.");
-//        return;
-//      }
-      songToPlay = scanner.next();
-      viewType = scanner.next();
+      try {
+        songToPlay = args[0];
+        viewType = args[1];
+      } catch (ArrayIndexOutOfBoundsException e) {
+        System.out.print("No command line args given.");
+        return;
+      }
 
       // Build model
       IMusicEditorModel model = IMusicEditorModelBuilder.build(MusicEditorType.TRACK,

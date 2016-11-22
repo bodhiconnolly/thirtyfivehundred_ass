@@ -57,6 +57,6 @@ public class GuiMidiEditorController implements IMusicEditorController {
   }
 
   private void togglePlay() {
-    view.renderNote(-1, -1, -1, -1, -1);
+    view.togglePlaying();
   }
 }
