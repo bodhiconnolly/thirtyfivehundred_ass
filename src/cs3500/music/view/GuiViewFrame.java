@@ -147,4 +147,9 @@ public class GuiViewFrame extends JFrame implements GuiView {
     }
     grid.repaint();
   }
+
+  @Override
+  public void togglePlaying() {
+    throw new UnsupportedOperationException("GuiViewFrame does not support this operation.");
+  }
 }

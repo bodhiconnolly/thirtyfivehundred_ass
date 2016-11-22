@@ -43,5 +43,10 @@ public interface GuiView extends IMusicEditorView {
    * @param noteChange option to reload all notes in view.
    */
   void update(boolean noteChange);
+
+  /**
+   * Toggle whether the song is playing or not.
+   */
+  void togglePlaying();
 }
 

@@ -42,17 +42,18 @@ public class CompositeView implements GuiView {
     if (rawPitch == -1 && volume == -1 && duration == -1 && instrument == -1 && beatnum == -1) {
       // Render the notes in the composite view as midi sounds. Advance the red line in the gui
       // view for each beat.
-
-      // Toggle whether the song is playing or not
-      if (!playing) {
-        playing = true;
-      } else {
-        playing = false;
-        return;
-      }
+      this.playing = true;
 
       // Play the song starting from the current beat
-      for (int i = curBeat; i < notes.size() && playing; i++) {
+      for (int i = curBeat; i < notes.size(); i++) {
+
+        while (!playing) {
+          try {
+            Thread.sleep(100);
+          } catch (InterruptedException e) {
+            e.printStackTrace();
+          }
+        }
 
         for (int j = 0; j < notes.get(i).size(); j++) {
           Note n = notes.get(i).get(j);
@@ -67,7 +68,7 @@ public class CompositeView implements GuiView {
         }
       }
       // Keep advancing the red line on the gui view
-      while (curBeat <= endOfSong && playing) {
+      while (curBeat <= endOfSong) {
         setBeat(curBeat);
         curBeat = curBeat + 1;
         try {
@@ -132,6 +133,11 @@ public class CompositeView implements GuiView {
   public void update(boolean noteChange) {
     // Scroll is taken care of automatically here.
     throw new InvalidParameterException("Update is automatic in this view");
+  }
+
+  @Override
+  public void togglePlaying() {
+    this.playing = !this.playing;
   }
 
   /**
