@@ -31,7 +31,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
   }
 
   @Override
-  public void go() {
+  public void begin() {
     int numBeats = model.length();
 
     for (int i = 0; i < numBeats; i++) {

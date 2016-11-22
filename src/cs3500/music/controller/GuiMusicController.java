@@ -36,7 +36,7 @@ public class GuiMusicController implements IMusicEditorController {
   }
 
   @Override
-  public void go() {
+  public void begin() {
 
     // Uncomment the following line to render the music editor in the model
     //System.out.print(model.toString());

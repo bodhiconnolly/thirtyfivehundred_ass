@@ -113,10 +113,10 @@ public class GuiViewFrame extends JFrame implements GuiView {
 
   @Override
   public void keyboardCallback(KeyboardHandler handler) {
-    if (editable){
+    if (editable) {
       input.addKeyListener(handler);
       input.setFocusable(true);
-    }else{
+    } else {
       window.addKeyListener(handler);
       window.setFocusable(true);
     }

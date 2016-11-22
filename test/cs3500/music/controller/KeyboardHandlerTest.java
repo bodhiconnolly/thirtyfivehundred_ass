@@ -24,7 +24,6 @@ public class KeyboardHandlerTest {
     kH.addRunnable(KeyEvent.VK_ENTER, () -> setTestVar());
     KeyEvent key = new KeyEvent(new JPanel(), KeyEvent.KEY_PRESSED,
             System.currentTimeMillis(), 0, KeyEvent.VK_ENTER, 'Z');
-    ;
     kH.keyPressed(key);
     assertTrue(testVar);
   }

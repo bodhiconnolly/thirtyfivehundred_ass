@@ -12,7 +12,7 @@ public class ConsoleController implements IMusicEditorController {
   }
 
   @Override
-  public void go() {
+  public void begin() {
     view.renderNote(0, 0, 0, 0, 0);
   }
 

@@ -53,7 +53,7 @@ public class TestMEMain {
       }
 
       // Gooooooooo
-      controller.go();
+      controller.begin();
 
       assertEquals(sb.toString(), this.sbTest.toString());
     } catch (FileNotFoundException e) {

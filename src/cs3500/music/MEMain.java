@@ -80,7 +80,7 @@ public class MEMain {
       }
 
       // Gooooooooo
-      controller.go();
+      controller.begin();
     } catch (FileNotFoundException e) {
       System.out.print("Given file not found.");
     }

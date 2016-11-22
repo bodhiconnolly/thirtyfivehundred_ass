@@ -2,18 +2,13 @@ package cs3500.music.model;
 
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiMessage;
 import javax.sound.midi.ShortMessage;
 
-import cs3500.music.util.CompositionBuilder;
-import cs3500.music.util.CompositionBuilderImpl;
-import cs3500.music.util.MusicReader;
+import static junit.framework.TestCase.assertEquals;
 
-import static org.junit.Assert.assertEquals;
 
 /**
  * Test the cs3500.music.music editor cs3500.music.model.
@@ -65,7 +60,7 @@ public class MusicEditorModelTest {
 
     //String trackString = mem.getTrackString();
     System.out.print(trackString);
-    /*
+
     assertEquals("   C1  C#1   D1  D#1   E1   F1  F#1   G1  G#1   A1  A#1   B1   C2 \n"
             + "0  X    X    X         X    X    X    X    X    X    X    X    X  \n"
             + "1  X    |    X              |    |    |    |    |    |    |    |  \n"
@@ -76,7 +71,7 @@ public class MusicEditorModelTest {
             + "6                                                    |    |    |  \n"
             + "7                                                         |    |  \n"
             + "8                                                              |  \n", trackString);
-  */
+
 
     try {
       StringBuilder sb = new StringBuilder();
