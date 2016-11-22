@@ -12,8 +12,8 @@ import cs3500.music.view.GuiView;
  * A controller for simultaneous rendering of gui and midi views.
  */
 public class GuiMidiEditorController implements IMusicEditorController {
-  IMusicEditorModel model;
-  GuiView view;
+  private IMusicEditorModel model;
+  private GuiView view;
 
   /**
    * Initialises the controller object.
@@ -56,8 +56,7 @@ public class GuiMidiEditorController implements IMusicEditorController {
     view.renderNote(-1, -1, -1, -1, -1);
   }
 
-  void togglePlay() {
-    System.out.print("\nplay/pause");
-    view.togglePlaying();
+  private void togglePlay() {
+    view.renderNote(-1, -1, -1, -1, -1);
   }
 }
