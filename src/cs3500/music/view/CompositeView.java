@@ -47,6 +47,9 @@ public class CompositeView implements GuiView {
       // Play the song starting from the current beat
       for (int i = curBeat; i < notes.size(); i++) {
 
+        // If the song is not playing, sleep for a tenth of a second and check it it is playing.
+        // Repeat indefinitely until the song is found to be playing. This is the pause/play
+        // feature.
         while (!playing) {
           try {
             Thread.sleep(100);

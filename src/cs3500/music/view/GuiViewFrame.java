@@ -15,7 +15,8 @@ import javax.swing.JScrollBar;
 import cs3500.music.controller.KeyboardHandler;
 
 /**
- * A skeleton Frame (i.e., a window) in Swing
+ * A skeleton Frame (i.e., a window) in Swing.
+ * CHANGE NOTE: Used to implement IMusicView, but now implements GuiView.
  */
 public class GuiViewFrame extends JFrame implements GuiView {
 
