@@ -46,10 +46,6 @@ public class ChartTrack implements IChart {
           UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration(), true);
           notes.get(notes.size() - 1).add(convertedNote);
         }
-//        else if (n.whichType() == INoteType.SUSTAIN){
-//          UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration(), false);
-//          notes.get(notes.size() - 1).add(convertedNote);
-//        }
         else {
           UnmodifiableNote convertedNote = new UnmodifiableNote(0, 1, 0, 0, false);
           notes.get(notes.size() - 1).add(convertedNote);
@@ -61,7 +57,9 @@ public class ChartTrack implements IChart {
         UnmodifiableNote thisNote = notes.get(i).get(j);
         if (thisNote.isHead()) {
           for (int k = 1; k < thisNote.getDuration(); k++) {
-            notes.get(i + k).set(j, new UnmodifiableNote(90, 1, thisNote.getPitch(), thisNote.getDuration(), false));
+            if (!notes.get(i + k).get(j).isHead()) {
+              notes.get(i + k).set(j, new UnmodifiableNote(90, 1, thisNote.getPitch(), thisNote.getDuration(), false));
+            }
           }
         }
       }
