@@ -1,4 +1,4 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.awt.*;
 import java.awt.event.KeyListener;
@@ -63,14 +63,14 @@ public class GuiViewImpl implements GuiView {
 
   @Override
   public void goToStart() {
-    // you probably don't want the view to jump away on its own
+    // you probably don't want the provider to jump away on its own
     this.autoScroll = false;
     scrollableChart.getHorizontalScrollBar().setValue(0);
   }
 
   @Override
   public void goToEnd() {
-    // you probably don't want the view to jump away on its own
+    // you probably don't want the provider to jump away on its own
     this.autoScroll = false;
     scrollableChart.getHorizontalScrollBar().setValue(vm.getNumberOfBeats() * NOTE_SIZE
             - frame.getWidth());
@@ -78,7 +78,7 @@ public class GuiViewImpl implements GuiView {
 
   @Override
   public void scrollLeft() {
-    // you probably don't want the view to jump away on its own
+    // you probably don't want the provider to jump away on its own
     this.autoScroll = false;
     int currentScroll = scrollableChart.getHorizontalScrollBar().getValue();
     int scrollBy = (vm.getNumberOfBeats() / 16) * NOTE_SIZE;

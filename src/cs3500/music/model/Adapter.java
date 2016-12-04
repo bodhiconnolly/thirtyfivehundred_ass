@@ -2,16 +2,13 @@ package cs3500.music.model;
 
 import java.util.ArrayList;
 
-import cs3500.music.view.IChart;
-import cs3500.music.view.UnmodifiableNote;
-
 /**
  * Created by matteoalampi on 12/3/16.
  */
-public class ChartTrack implements IChart {
+public class Adapter implements IChart {
   IMusicEditorModel track;
 
-  public ChartTrack(IMusicEditorModel track) {
+  public Adapter(IMusicEditorModel track) {
     this.track = track;
   }
 

@@ -1,9 +1,12 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.util.List;
 
+import cs3500.music.model.IChart;
+import cs3500.music.model.UnmodifiableNote;
+
 /**
- * An adapter between the model and the view.
+ * An adapter between the model and the provider.
  */
 public class MidiViewModel {
   private final IChart model;

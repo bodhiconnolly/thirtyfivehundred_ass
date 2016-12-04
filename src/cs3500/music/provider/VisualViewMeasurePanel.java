@@ -1,4 +1,4 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.awt.*;
 
@@ -14,7 +14,7 @@ public class VisualViewMeasurePanel extends JPanel {
   /**
    * Constructor for VisualViewMeasurePanel.
    *
-   * @param viewModel The view model.
+   * @param viewModel The provider model.
    */
   public VisualViewMeasurePanel(MidiViewModel viewModel) {
     this(viewModel, 16);
@@ -23,7 +23,7 @@ public class VisualViewMeasurePanel extends JPanel {
   /**
    * Constructor for VisualViewMeasurePanel.
    *
-   * @param viewModel The view model.
+   * @param viewModel The provider model.
    * @param measure   The amount of measures between each number.
    */
   public VisualViewMeasurePanel(MidiViewModel viewModel, int measure) {

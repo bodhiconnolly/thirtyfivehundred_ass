@@ -2,21 +2,16 @@ package cs3500.music;
 
 import java.io.FileNotFoundException;
 
-import javax.swing.text.View;
-
 import cs3500.music.controller.IMusicEditorController;
-import cs3500.music.model.ChartTrack;
+import cs3500.music.model.Adapter;
 import cs3500.music.model.DiatonicScale;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.IMusicEditorModelBuilder;
 import cs3500.music.model.MusicEditorType;
-import cs3500.music.view.ConsoleView;
-import cs3500.music.view.GuiView;
-import cs3500.music.view.IChart;
-import cs3500.music.view.IView;
-import cs3500.music.view.MidiViewModel;
-import cs3500.music.view.ViewFactory;
-import javafx.scene.chart.Chart;
+import cs3500.music.model.IChart;
+import cs3500.music.provider.IView;
+import cs3500.music.provider.MidiViewModel;
+import cs3500.music.provider.ViewFactory;
 
 /**
  * Represent the main that runs the program.
@@ -32,6 +27,7 @@ public class MEMain {
     try {
       String songToPlay;
       String viewType;
+
       try {
         songToPlay = args[0];
         viewType = args[1];
@@ -43,7 +39,7 @@ public class MEMain {
       // Build model
       IMusicEditorModel track = IMusicEditorModelBuilder.build(MusicEditorType.TRACK,
               new DiatonicScale(), 4).fromFile(songToPlay);
-      IChart chartTrack = new ChartTrack(track);
+      IChart chartTrack = new Adapter(track);
       MidiViewModel midiViewModel = new MidiViewModel(chartTrack);
 
       IView view;
@@ -51,7 +47,7 @@ public class MEMain {
       switch (viewType) {
         case "midi":
           view = ViewFactory.makeView("midi");
-          //controller = new MidiMusicEditorController(model, view);
+          //controller = new MidiMusicEditorController(model, provider);
           break;
         case "visual":
           view = ViewFactory.makeView("visual");
@@ -59,14 +55,14 @@ public class MEMain {
           break;
         case "console":
           view = ViewFactory.makeView("console");
-          //controller = new ConsoleController(model, view);
+          //controller = new ConsoleController(model, provider);
           break;
         case "guimidi":
           view = ViewFactory.makeView("audiovisual");
           //controller = new GuiMidiEditorController(model, view2);
           break;
         default:
-          throw new IllegalArgumentException("Invalid view type given: Must be \"midi\", "
+          throw new IllegalArgumentException("Invalid provider type given: Must be \"midi\", "
                   + "\"visual\", or \"console\".");
       }
 

@@ -1,7 +1,8 @@
-package cs3500.music.view;
+package cs3500.music.model;
 
 /**
- * Created by matteoalampi on 11/30/16.
+ *  Intermediate note class to give notes to view without access to whole model.
+ *  Added in HW8 to match provider.
  */
 public class UnmodifiableNote {
   private int volume;
@@ -10,6 +11,14 @@ public class UnmodifiableNote {
   private int duration;
   private boolean head;
 
+  /**
+   *
+   * @param volume
+   * @param instrument
+   * @param pitch
+   * @param duration
+   * @param head
+   */
   public UnmodifiableNote(int volume, int instrument, int pitch, int duration, boolean head) {
     this.volume = volume;
     this.instrument = instrument;
@@ -18,10 +27,19 @@ public class UnmodifiableNote {
     this.head = head;
   }
 
+  /**
+   *
+   * @param pitch
+   * @return
+   */
   public int compareTo(int pitch) {
     return 0;
   }
 
+  /**
+   *
+   * @return
+   */
   public String asString() {
     if (this.head) {
       return "  X  ";
@@ -34,22 +52,42 @@ public class UnmodifiableNote {
     }
   }
 
+  /**
+   *
+   * @return
+   */
   public int getVolume() {
     return volume;
   }
 
+  /**
+   *
+   * @return
+   */
   public int getInstrument() {
     return instrument;
   }
 
+  /**
+   *
+   * @return
+   */
   public int getPitch() {
     return pitch;
   }
 
+  /**
+   *
+   * @return
+   */
   public int getDuration() {
     return duration;
   }
 
+  /**
+   *
+   * @return
+   */
   public boolean isHead() {
     return head;
   }

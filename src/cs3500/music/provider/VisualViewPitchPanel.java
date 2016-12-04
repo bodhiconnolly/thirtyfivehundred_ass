@@ -1,4 +1,4 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.awt.*;
 
@@ -14,7 +14,7 @@ public class VisualViewPitchPanel extends JPanel {
   /**
    * Constructor for VisualViewPitchPanel.
    *
-   * @param viewModel The view model.
+   * @param viewModel The provider model.
    */
   public VisualViewPitchPanel(MidiViewModel viewModel) {
     this.viewModel = viewModel;

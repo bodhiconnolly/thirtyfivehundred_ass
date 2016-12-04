@@ -1,6 +1,8 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.io.IOException;
+
+import cs3500.music.model.UnmodifiableNote;
 
 /**
  * A ConsoleView is an implementation of {@link IView} that displays a song in a text format.

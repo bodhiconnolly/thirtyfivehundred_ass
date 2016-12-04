@@ -1,9 +1,11 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.awt.*;
 import java.util.List;
 
 import javax.swing.*;
+
+import cs3500.music.model.UnmodifiableNote;
 
 /**
  * The panel that contains the visualization of the MIDI file.
@@ -28,7 +30,7 @@ public class VisualViewMidiPanel extends JPanel {
   /**
    * Constructor for VisualViewMidiPanel.
    *
-   * @param viewModel The view model.
+   * @param viewModel The provider model.
    */
   public VisualViewMidiPanel(MidiViewModel viewModel) {
     this(viewModel, 4);
@@ -37,7 +39,7 @@ public class VisualViewMidiPanel extends JPanel {
   /**
    * Constructor for VisualViewMidiPanel.
    *
-   * @param viewModel The view model.
+   * @param viewModel The provider model.
    * @param measure   The amount of notes in a measure.
    */
   public VisualViewMidiPanel(MidiViewModel viewModel, int measure) {
@@ -94,7 +96,7 @@ public class VisualViewMidiPanel extends JPanel {
   }
 
   /**
-   * Refreshes the visual view.
+   * Refreshes the visual provider.
    */
   protected void refresh() {
     if (!this.viewModel.isPaused()) {
@@ -107,7 +109,7 @@ public class VisualViewMidiPanel extends JPanel {
   /**
    * Returns true if the frame needs to scroll.
    * @param width the width of the frame.
-   * @return true if the red line is out of view.
+   * @return true if the red line is out of provider.
    */
   public boolean needToScroll(int width) {
     boolean res = scrollTime * GuiViewImpl.NOTE_SIZE >= width;

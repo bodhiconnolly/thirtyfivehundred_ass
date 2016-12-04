@@ -1,4 +1,4 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
@@ -27,7 +27,8 @@ public class AudioVisualView implements GuiView {
 
   /**
    * Runs the given runnable every interval of timeout.
-   * @param r the runnable to run
+   *
+   * @param r       the runnable to run
    * @param timeout the time between each run
    */
   private void refresh(Runnable r, int timeout) {

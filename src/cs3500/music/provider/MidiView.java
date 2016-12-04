@@ -1,4 +1,4 @@
-package cs3500.music.view;
+package cs3500.music.provider;
 
 import java.util.List;
 import java.util.Objects;
@@ -10,6 +10,8 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Receiver;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Synthesizer;
+
+import cs3500.music.model.UnmodifiableNote;
 
 /**
  * A MidiView is an implementation of {@link IView} that plays a song as a MIDI.
