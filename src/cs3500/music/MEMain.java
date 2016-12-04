@@ -3,6 +3,7 @@ package cs3500.music;
 import java.io.FileNotFoundException;
 
 import cs3500.music.controller.IMusicEditorController;
+import cs3500.music.controller.MusicEditorController;
 import cs3500.music.model.Adapter;
 import cs3500.music.model.DiatonicScale;
 import cs3500.music.model.IMusicEditorModel;
@@ -39,8 +40,6 @@ public class MEMain {
       // Build model
       IMusicEditorModel track = IMusicEditorModelBuilder.build(MusicEditorType.TRACK,
               new DiatonicScale(), 4).fromFile(songToPlay);
-      IChart chartTrack = new Adapter(track);
-      MidiViewModel midiViewModel = new MidiViewModel(chartTrack);
 
       IView view;
       IMusicEditorController controller;
@@ -66,9 +65,10 @@ public class MEMain {
                   + "\"visual\", or \"console\".");
       }
 
+      controller = new MusicEditorController(track, view);
+
       // Gooooooooo
-      //controller.begin();
-      view.run(midiViewModel);
+      controller.begin();
     } catch (FileNotFoundException e) {
       System.out.print("Given file not found.");
     }
