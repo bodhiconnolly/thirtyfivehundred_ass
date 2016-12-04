@@ -62,6 +62,7 @@ public class Adapter implements IChart {
             }
           }
         }
+        notes.get(i).set(j, new UnmodifiableNote(thisNote.getVolume(), thisNote.getInstrument(), thisNote.getPitch(), thisNote.getDuration() + 4, thisNote.isHead()));
       }
     }
     return notes;

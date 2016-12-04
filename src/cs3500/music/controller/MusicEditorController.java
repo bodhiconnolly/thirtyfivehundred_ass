@@ -3,7 +3,6 @@ package cs3500.music.controller;
 import cs3500.music.model.Adapter;
 import cs3500.music.model.IChart;
 import cs3500.music.model.IMusicEditorModel;
-import cs3500.music.model.Track;
 import cs3500.music.provider.IView;
 import cs3500.music.provider.MidiViewModel;
 

@@ -91,6 +91,6 @@ public class MidiView implements IView {
     MidiMessage stop = new ShortMessage(ShortMessage.NOTE_OFF, n.getInstrument() - 1, n.getPitch(),
             n.getVolume());
     this.receiver.send(start, time);
-    this.receiver.send(stop, timing * (time + n.getDuration() - 1));
+    this.receiver.send(stop, (timing * 1000) * (time + n.getDuration()));
   }
 }
