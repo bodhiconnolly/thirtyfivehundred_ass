@@ -42,7 +42,7 @@ public class Adapter implements IChart {
       notes.add(new ArrayList<>());
       for (ANote n : track.getAtBeat(i)) {
         if (n.whichType() == INoteType.NOTE) {
-          UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration() - 1, true);
+          UnmodifiableNote convertedNote = new UnmodifiableNote(90, n.getInstrument(), n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration() - 1, true);
           notes.get(notes.size() - 1).add(convertedNote);
         } else {
           UnmodifiableNote convertedNote = new UnmodifiableNote(0, 1, 0, 0, false);
