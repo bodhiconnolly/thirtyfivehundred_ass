@@ -13,32 +13,32 @@ import java.util.ArrayList;
  */
 public interface IChart {
   /**
-   *
-   * @return
+   * Get total length of song.
+   * @return number of beats in song.
    */
   int numberOfBeats();
 
   /**
-   *
-   * @return
+   * Get highest pitch in song.
+   * @return highest pitch.
    */
   int getMaxPitch();
 
   /**
-   *
-   * @return
+   * Get lowest pitch.
+   * @return lowest pitch.
    */
   int getMinPitch();
 
   /**
-   *
-   * @return
+   * Get tempo.
+   * @return tempo as milliseconds of a beat.
    */
   int getTempo();
 
   /**
-   *
-   * @return
+   * Get list of notes
+   * @return 2d array list of notes.
    */
   ArrayList<ArrayList<UnmodifiableNote>> getAllNotes();
 }

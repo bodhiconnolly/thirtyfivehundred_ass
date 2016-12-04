@@ -3,7 +3,8 @@ package cs3500.music.model;
 import java.util.ArrayList;
 
 /**
- * Created by matteoalampi on 12/3/16.
+ * A class that takes one of our model objects and implements the provider's
+ * model interface, so that we can interface with their view code.
  */
 public class Adapter implements IChart {
   IMusicEditorModel track;
@@ -11,7 +12,6 @@ public class Adapter implements IChart {
   public Adapter(IMusicEditorModel track) {
     this.track = track;
   }
-
 
   @Override
   public int numberOfBeats() {
@@ -44,8 +44,7 @@ public class Adapter implements IChart {
         if (n.whichType() == INoteType.NOTE) {
           UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration() - 1, true);
           notes.get(notes.size() - 1).add(convertedNote);
-        }
-        else {
+        } else {
           UnmodifiableNote convertedNote = new UnmodifiableNote(0, 1, 0, 0, false);
           notes.get(notes.size() - 1).add(convertedNote);
         }

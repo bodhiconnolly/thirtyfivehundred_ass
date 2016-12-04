@@ -12,12 +12,12 @@ public class UnmodifiableNote {
   private boolean head;
 
   /**
-   *
-   * @param volume
-   * @param instrument
-   * @param pitch
-   * @param duration
-   * @param head
+   * Constructs a new note.
+   * @param volume volume.
+   * @param instrument instrument.
+   * @param pitch pitch.
+   * @param duration duration.
+   * @param head is the note a start note.
    */
   public UnmodifiableNote(int volume, int instrument, int pitch, int duration, boolean head) {
     this.volume = volume;
@@ -28,17 +28,17 @@ public class UnmodifiableNote {
   }
 
   /**
-   *
-   * @param pitch
-   * @return
+   * Compare notes.
+   * @param pitch the pitches.
+   * @return the relative note.
    */
   public int compareTo(int pitch) {
     return 0;
   }
 
   /**
-   *
-   * @return
+   * Get string of note.
+   * @return the note string.
    */
   public String asString() {
     if (this.head) {
@@ -53,40 +53,40 @@ public class UnmodifiableNote {
   }
 
   /**
-   *
-   * @return
+   * Get volume of note.
+   * @return the volume.
    */
   public int getVolume() {
     return volume;
   }
 
   /**
-   *
-   * @return
+   * Get instrument number.
+   * @return instrument number.
    */
   public int getInstrument() {
     return instrument;
   }
 
   /**
-   *
-   * @return
+   * Get the pitch.
+   * @return the pitch.
    */
   public int getPitch() {
     return pitch;
   }
 
   /**
-   *
-   * @return
+   * Get the duration.
+   * @return duration.
    */
   public int getDuration() {
     return duration;
   }
 
   /**
-   *
-   * @return
+   * Check whether note is head.
+   * @return boolean for is head.
    */
   public boolean isHead() {
     return head;
