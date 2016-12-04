@@ -1,23 +1,22 @@
 package cs3500.music;
 
 import java.io.FileNotFoundException;
-import java.util.Scanner;
 
-import cs3500.music.controller.ConsoleController;
-import cs3500.music.controller.GuiMidiEditorController;
-import cs3500.music.controller.GuiMusicController;
+import javax.swing.text.View;
+
 import cs3500.music.controller.IMusicEditorController;
-import cs3500.music.controller.MidiMusicEditorController;
+import cs3500.music.model.ChartTrack;
 import cs3500.music.model.DiatonicScale;
 import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.IMusicEditorModelBuilder;
 import cs3500.music.model.MusicEditorType;
-import cs3500.music.view.CompositeView;
 import cs3500.music.view.ConsoleView;
 import cs3500.music.view.GuiView;
-import cs3500.music.view.GuiViewFrame;
-import cs3500.music.view.IMusicEditorView;
-import cs3500.music.view.MidiViewImpl;
+import cs3500.music.view.IChart;
+import cs3500.music.view.IView;
+import cs3500.music.view.MidiViewModel;
+import cs3500.music.view.ViewFactory;
+import javafx.scene.chart.Chart;
 
 /**
  * Represent the main that runs the program.
@@ -42,31 +41,29 @@ public class MEMain {
       }
 
       // Build model
-      IMusicEditorModel model = IMusicEditorModelBuilder.build(MusicEditorType.TRACK,
+      IMusicEditorModel track = IMusicEditorModelBuilder.build(MusicEditorType.TRACK,
               new DiatonicScale(), 4).fromFile(songToPlay);
+      IChart chartTrack = new ChartTrack(track);
+      MidiViewModel midiViewModel = new MidiViewModel(chartTrack);
 
-      IMusicEditorView view;
-      GuiView view2;
+      IView view;
       IMusicEditorController controller;
       switch (viewType) {
         case "midi":
-          view = new MidiViewImpl(model.getTempo());
-          controller = new MidiMusicEditorController(model, view);
+          view = ViewFactory.makeView("midi");
+          //controller = new MidiMusicEditorController(model, view);
           break;
         case "visual":
-          view2 = new GuiViewFrame(
-                  model.getHighestNote(), model.getLowestNote(), model.length(), true);
-          controller = new GuiMusicController(model, view2);
+          view = ViewFactory.makeView("visual");
+          //controller = new GuiMusicController(model, view2);
           break;
         case "console":
-          view = new ConsoleView(model);
-          controller = new ConsoleController(model, view);
+          view = ViewFactory.makeView("console");
+          //controller = new ConsoleController(model, view);
           break;
         case "guimidi":
-          view2 = new CompositeView(new GuiViewFrame(
-                  model.getHighestNote(), model.getLowestNote(), model.length(), false),
-                  new MidiViewImpl(model.getTempo()));
-          controller = new GuiMidiEditorController(model, view2);
+          view = ViewFactory.makeView("audiovisual");
+          //controller = new GuiMidiEditorController(model, view2);
           break;
         default:
           throw new IllegalArgumentException("Invalid view type given: Must be \"midi\", "
@@ -74,7 +71,8 @@ public class MEMain {
       }
 
       // Gooooooooo
-      controller.begin();
+      //controller.begin();
+      view.run(midiViewModel);
     } catch (FileNotFoundException e) {
       System.out.print("Given file not found.");
     }

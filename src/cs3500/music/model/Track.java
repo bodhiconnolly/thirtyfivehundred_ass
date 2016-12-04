@@ -327,7 +327,7 @@ public class Track implements IMusicEditorModel {
   public IMusicEditorModel fromFile(String fileName) throws FileNotFoundException {
     CompositionBuilder cb = new CompositionBuilderImpl();
     String path = new File("").getAbsolutePath() + "/" + "src/cs3500/music/SongFiles/" + fileName;
-    System.out.print(path);
+    //System.out.print(path);
     FileReader mhll = new FileReader(path);
     IMusicEditorModel model = (IMusicEditorModel) MusicReader.parseFile(mhll, cb);
     return model;

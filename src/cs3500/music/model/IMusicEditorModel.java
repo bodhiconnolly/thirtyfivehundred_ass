@@ -29,7 +29,7 @@ public interface IMusicEditorModel {
    * @param curBeat         Starting beat of note
    */
   void editPitchBaseInterval(int newPitch, int newBaseInterval,
-                         int curPitch, int curBaseInterval, int curBeat, int instrument);
+                             int curPitch, int curBaseInterval, int curBeat, int instrument);
 
   /**
    * Change starting beat of the note at given pitch, interval, and beat.

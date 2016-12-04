@@ -1,52 +1,66 @@
 package cs3500.music.view;
 
-import cs3500.music.controller.KeyboardHandler;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 
 /**
- * Interface for visually representing a piece of music. Also provides methods for
- * user to provide input to edit notes.
+ * Interface for GUI views of MIDI.
  */
-public interface GuiView extends IMusicEditorView {
+public interface GuiView extends IView {
+  int NOTE_SIZE = 12;
+  /**
+   * Toggles pause and play for this view.
+   */
+  void pausePlay();
 
   /**
-   * Adds a keyboard listener to the view.
-   * @param handler the key listener.
+   * Makes the view return to the start of the piece.
    */
-  void keyboardCallback(KeyboardHandler handler);
+  void goToStart();
 
   /**
-   * Set the current beat of playback.
-   * @param beat the current beat.
+   * Makes the view skip to the end of the piece.
    */
-  void setBeat(int beat);
+  void goToEnd();
 
   /**
-   * Scroll the view horizontally.
-   * @param toScroll the number of pixels to scroll.
+   * Scrolls the gui to the left.
    */
-  void scroll(int toScroll);
+  void scrollLeft();
 
   /**
-   * Get the lowest note of the composition.
-   * @return the value of the lowest note.
+   * Scrolls the gui to the right.
    */
-  int getLowestNote();
+  void scrollRight();
 
   /**
-   *  Get the command entered by the user.
-   * @return the string entered.
+   * Adds the given keyListener.
+   * @param keyListener the key listener
    */
-  String getTextInput();
+  void addKeyListener(KeyListener keyListener);
 
   /**
-   * Refresh the frame.
-   * @param noteChange option to reload all notes in view.
+   * Adds the given mouseListener.
+   * @param mouseListener the mouse listener
    */
-  void update(boolean noteChange);
+  void addMouseListener(MouseListener mouseListener);
 
   /**
-   * Toggle whether the song is playing or not.
+   * Gets the pitch that the mouse is hovering over.
+   * @return The pitch the mouse is at.
+   * @throws IllegalArgumentException If the mouse is out of bounds.
    */
-  void togglePlaying();
+  int getMousePitch() throws IllegalArgumentException;
+
+  /**
+   * Gets the beat that the mouse is hovering over.
+   * @return The beat the mouse is at.
+   * @throws IllegalArgumentException If the mouse is out of bounds.
+   */
+  int getMouseBeat() throws IllegalArgumentException;
+
+  /**
+   * Refreshes the visual view.
+   */
+  void refresh();
 }
-
