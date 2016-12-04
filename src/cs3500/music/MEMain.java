@@ -10,6 +10,7 @@ import cs3500.music.model.IMusicEditorModel;
 import cs3500.music.model.IMusicEditorModelBuilder;
 import cs3500.music.model.MusicEditorType;
 import cs3500.music.model.IChart;
+import cs3500.music.provider.GuiView;
 import cs3500.music.provider.IView;
 import cs3500.music.provider.MidiViewModel;
 import cs3500.music.provider.ViewFactory;
@@ -65,7 +66,7 @@ public class MEMain {
                   + "\"visual\", or \"console\".");
       }
 
-      controller = new MusicEditorController(track, view);
+      controller = new MusicEditorController(track, (GuiView)view);
 
       // Gooooooooo
       controller.begin();
