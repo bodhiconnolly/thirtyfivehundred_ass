@@ -38,12 +38,14 @@ public class ChartTrack implements IChart {
 
   @Override
   public ArrayList<ArrayList<UnmodifiableNote>> getAllNotes() {
+    // Initialize the grid of unmodifiable notes
     ArrayList<ArrayList<UnmodifiableNote>> notes = new ArrayList<>();
+    // Copy notes and rests from track over to new grid of unmodifiable notes
     for (int i = 0; i < track.length(); i++) {
       notes.add(new ArrayList<>());
       for (ANote n : track.getAtBeat(i)) {
         if (n.whichType() == INoteType.NOTE) {
-          UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration(), true);
+          UnmodifiableNote convertedNote = new UnmodifiableNote(90, 1, n.getPitch() + ((n.getBaseInterval() - 1) * 12), n.getDuration() - 1, true);
           notes.get(notes.size() - 1).add(convertedNote);
         }
         else {
@@ -52,12 +54,14 @@ public class ChartTrack implements IChart {
         }
       }
     }
+    // Run through grid of unmodifiable notes and add sustains based on the durations of existing
+    // notes
     for (int i = 0; i < notes.size(); i++) {
       for (int j = 0; j < notes.get(0).size(); j++) {
         UnmodifiableNote thisNote = notes.get(i).get(j);
         if (thisNote.isHead()) {
           for (int k = 1; k < thisNote.getDuration(); k++) {
-            if (!notes.get(i + k).get(j).isHead()) {
+            if (!notes.get(i + k).get(j).isHead()) { // Prevent overwriting note heads
               notes.get(i + k).set(j, new UnmodifiableNote(90, 1, thisNote.getPitch(), thisNote.getDuration(), false));
             }
           }
